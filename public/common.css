@@ -1,0 +1,19 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+
+body {
+    --themeColor          : #ec3c4e;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing   : antialiased;
+    font-family:"Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "WenQuanYi Micro Hei";
+}
