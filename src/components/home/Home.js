@@ -5,71 +5,37 @@ import { Carousel } from "antd-mobile";
 import "./Home.scss"
 // 引入axios
 import axios from "../../utils/myaxios"
-// 引入轮播图片
-import LoopImg1 from "../../assets/images/p13.jpg"
-import LoopImg2 from "../../assets/images/p14.jpg"
-import LoopImg3 from "../../assets/images/p15.jpg"
-// 引入限时抢购图片
-import productImg1 from "../../assets/images/p16.png"
-import productImg2 from "../../assets/images/p17.png"
-import productImg3 from "../../assets/images/p18.png"
-import productImg4 from "../../assets/images/p19.png"
 // 引入限购一套图片
 import OnyOneImgUrl from "../../assets/images/u59.jpg"
-// 引入栏目图片
-import columnImg1 from "../../assets/images/pyq66.jpg"
-
+//引入推荐商品图片
+import remmendProduct from "../../assets/images/p0.png"
 
 export default class home extends Component {
   state = {
-    data: ['1', '2', '3'],
     // 返回的轮播图数据
     swiper_list: [],
     // 限时抢购数据
-    flash_sale_product_list: [
-      {
-        id: 1,
-        flash_sale_product_url: productImg1,
-        flash_sale_product_price: 69,
-        flash_sale_product_residue: 35
-      },
-      {
-        id: 2,
-        flash_sale_product_url: productImg2,
-        flash_sale_product_price: 70,
-        flash_sale_product_residue: 68
-      },
-      {
-        id: 3,
-        flash_sale_product_url: productImg3,
-        flash_sale_product_price: 74,
-        flash_sale_product_residue: 41
-      },
-      {
-        id: 4,
-        flash_sale_product_url: productImg4,
-        flash_sale_product_price: 73,
-        flash_sale_product_residue: 106
-      },
-    ],
-    // 栏目数据
-    columnImg1: columnImg1,
+    flash_sale_product_list: [],
     // 限购一套数据
     onlyOneImg: OnyOneImgUrl,
+    // 栏目数据
+    column_list: [],
+    // 推荐商品数据
+    recommend_list: [],
 
     imgHeight: 176,
   }
   // 获取数据
-  componentDidMount(){
-    console.log(LoopImg1);
-    axios.get('/swiper-list.json').then((res)=>{
-      console.log(res);
-      this.setState({
-        swiper_list:res
-      })
-    }).catch((err)=>{
-      console.log(err);
-    })
+  componentDidMount() {
+   
+    // 请求轮播图数据
+    axios.get('/swiper-list.json').then((res) => { this.setState({ swiper_list: res }) }).catch(err => console.log(err))
+    // 请求限时抢购数据
+    axios.get('/flash-sale-product-list.json').then((res) => { this.setState({ flash_sale_product_list: res }) }).catch(err => console.log(err))
+    // 请求栏目数据
+    axios.get('/column-list.json').then((res) => { this.setState({ column_list: res }) }).catch(err => console.log(err))
+    // 请求推荐商品数据
+    axios.get('/recommend-list.json').then((res) => {  console.log(res);this.setState({ recommend_list: res }) }).catch(err=>console.log(err))
   }
   render() {
     return (
@@ -154,33 +120,59 @@ export default class home extends Component {
           </div>
           {/* 限购一套结束 */}
           {/* 栏目开始 */}
-          <div className="home-column">
-            <div className="column-header">
-              <img src={this.state.columnImg1}></img>
-            </div>
-            <div className="column-middle">
-              <span className="column-title">致女友,想把天上的星星,摘下送给你</span>
-              <p className="column-text">如果你爱上了一朵长在星星上的花，那么夜间，你看着天空就感到甜蜜愉快，所有的星星都好像开着花</p>
-            </div>
-            <div className="column-bottom">
-              <span className="column-bottom-left">栏目送女友</span>
-              <span className="column-bottom-right">
-                <i className="column-watch">
-                  <svg className="icon" aria-hidden="true">
-                    <use xlinkHref="#icon-zhibo-guankanrenshu"></use>
-                  </svg>
-                  <b>1921</b>
-                </i>
-                <i className="column-collect">
-                  <svg className="icon" aria-hidden="true">
-                    <use xlinkHref="#icon-shoucang1"></use>
-                  </svg>
-                  <b>173</b>
-                </i>
-              </span>
-            </div>
+          <div className="home-warp">
+            {this.state.column_list.map(v =>
+              <div className="home-column" key={v.column_url}>
+                <div className="column-header">
+                  <img src={v.column_url}></img>
+                </div>
+                <div className="column-middle">
+                  <span className="column-title">{v.column_text_title}</span>
+                  <p className="column-text">{v.column_text_content}</p>
+                </div>
+                <div className="column-bottom">
+                  <span className="column-bottom-left">{v.column_explain}</span>
+                  <span className="column-bottom-right">
+                    <i className="column-watch">
+                      <svg className="icon" aria-hidden="true">
+                        <use xlinkHref="#icon-zhibo-guankanrenshu"></use>
+                      </svg>
+                      <b>{v.column_watch_num}</b>
+                    </i>
+                    <i className="column-collect">
+                      <svg className="icon" aria-hidden="true">
+                        <use xlinkHref="#icon-shoucang1"></use>
+                      </svg>
+                      <b>{v.column_collect_num}</b>
+                    </i>
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
           {/* 栏目结束 */}
+          {/* 推荐商品开始 */}
+          <div className="home-recommend-product">
+            <h2>推荐商品</h2>
+            <div className="recommend-product-list">
+              {/* 子项目开始 */}
+              {this.state.recommend_list.map(v=>
+                 <div className="recommend-product-item" key={v.id}>
+                 <div className="recommend-product-img">
+                   <img src={v.recommend_url} alt=""></img>
+                 </div>
+                 <div className="product-explain-box">
+                 <span className="recommend-product-explain">{v.recommend_text}</span>
+                 </div>
+                 <span className="recommend-product-price">
+                   <b>￥ {v.recommend_price}</b>
+                 </span>
+               </div> 
+                )}
+                {/* 子项目结束 */}
+            </div>
+          </div>
+          {/* 推荐商品结束 */}
         </div>
       </div >
     );

@@ -7,6 +7,7 @@ import Cart from "./components/cart/Cart"
 import Catagory from './components/catagory/Catagory'
 import Tabbar from './components/tabbar/Tabbar'
 import My from './components/my/My'
+
 export default class App extends Component {
   render() {
     return (
