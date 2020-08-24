@@ -3,6 +3,7 @@ import React from "react"
 import { TabBar } from 'antd-mobile';
 // 引入 路由跳转的函数
 import { withRouter } from "react-router-dom"
+import  "./Tabbar.scss"
 
 class MyTabbar extends React.Component {
     constructor(props) {
@@ -27,16 +28,18 @@ class MyTabbar extends React.Component {
                         title="首页"
                         key="Home"
                         icon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_home" aria-hidden="true" style={{color:"#000000"}}>
                                 <use xlinkHref="#icon-yemian-copy-copy"></use>
                             </svg>
                         }
                         selectedIcon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_home_s" aria-hidden="true">
                                 <use xlinkHref="#icon-yemian-copy"></use>
                             </svg>
                         }
+                        // 选中条件
                         selected={this.props.location.pathname === '/'}
+                        // 点击事件
                         onPress={() => {
                             this.props.history.push("/");
                         }}
@@ -46,12 +49,12 @@ class MyTabbar extends React.Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_gift" aria-hidden="true">
                                 <use xlinkHref="#icon-zengsongliquan"></use>
                             </svg>
                         }
                         selectedIcon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_gift_s" aria-hidden="true">
                                 <use xlinkHref="#icon-zengsongliquan-copy"></use>
                             </svg>
                         }
@@ -67,12 +70,12 @@ class MyTabbar extends React.Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_catagory" aria-hidden="true">
                                 <use xlinkHref="#icon-leimupinleifenleileibie1"></use>
                             </svg>
                         }
                         selectedIcon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_catagory_s" aria-hidden="true">
                                 <use xlinkHref="#icon-leimupinleifenleileibie"></use>
                             </svg>
                         }
@@ -87,12 +90,12 @@ class MyTabbar extends React.Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_cart" aria-hidden="true">
                                 <use xlinkHref="#icon-gouwuche"></use>
                             </svg>
                         }
                         selectedIcon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_cart_s" aria-hidden="true">
                                 <use xlinkHref="#icon-gouwuche1"></use>
                             </svg>
                         }
@@ -107,12 +110,12 @@ class MyTabbar extends React.Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_my" aria-hidden="true">
                                 <use xlinkHref="#icon-wodedangxuan1"></use>
                             </svg>
                         }
                         selectedIcon={
-                            <svg className="icon" aria-hidden="true">
+                            <svg className="icon icon_my_s" aria-hidden="true">
                                 <use xlinkHref="#icon-wodedangxuan"></use>
                             </svg>
                         }
