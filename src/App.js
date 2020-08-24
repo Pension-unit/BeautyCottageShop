@@ -22,25 +22,5 @@ export default class App extends Component {
     )
   }
 }
-// import React, { Component } from "react";
-// import Home from "./components/home/Home";
-// import Community from "./components/community/Community";
-// import Cart from "./components/cart/Cart";
-// import My from "./components/my/My";
-// import Tabbar from "./components/tabbar/Tabbar"
-// import { HashRouter as Router, Route } from "react-router-dom";
 
-// export default class App extends Component {
-//   render() {
-//     return <div>
-//       <Router>
-//         <Route exact path="/" render={()=><Tabbar><Home></Home></Tabbar>}></Route>
-//         <Route exact path="/community" render={()=><Tabbar><Community></Community></Tabbar>}></Route>
-//         <Route exact path="/cart" render={()=><Tabbar><Cart></Cart></Tabbar>}></Route>
-//         <Route exact path="/my" render={()=><Tabbar><My></My></Tabbar>}></Route>
-//       </Router>
-
-//     </div>;
-//   }
-// }
 
