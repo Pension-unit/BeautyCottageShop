@@ -1,0 +1,86 @@
+// 头部
+.catagory-header {
+  height: 60px;
+  background-color: #ff0036;
+  .app-catagory-search {
+    position: relative;
+    .icon_header-search {
+      position: absolute;
+      font-size: 5vw;
+      left: 27px;
+      color: #cdcdcd;
+      bottom: 6px;
+    }
+
+    .icon_header_speak {
+      position: absolute;
+      font-size: 5vw;
+      bottom: 6px;
+      right: 60px;
+      color: #cdcdcd;
+    }
+    .string {
+      display: block;
+      position: absolute;
+      bottom: 9px;
+      color: #cdcdcd;
+      right: 55px;
+    }
+    .icon_header_camera {
+      position: absolute;
+      font-size: 5.5vw;
+      bottom: 4px;
+      color: #cdcdcd;
+      right: 30px;
+    }
+
+    .catagory-header-search {
+      border: none;
+      padding-left: 9vw;
+      margin-top: 3.6vh;
+      border-radius: 10px;
+      margin-left: 5vw;
+      height: 30px;
+      background-color: white;
+      width: 90vw;
+    }
+  }
+}
+
+// tab栏
+.catagory-tab-wrapper {
+  width: 100vw;
+  height: 46px;
+  border: 1px solid pink;
+  border-bottom: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  .catagory-tab {
+    position: relative;
+    top: 1px;
+    width: 255px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    .catagory-tab-item {
+      flex: 1;
+      height: 100%;
+      div {
+        font-family: "MicrosoftYaHei", "微软雅黑";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        color: #666666;
+        text-align: center;
+        line-height: 45px;
+      }
+    }
+
+    .active {
+        border-bottom: 2px solid #666666;
+        div {
+            font-family: '微软雅黑 Bold', '微软雅黑';
+            font-weight: 700;
+        }
+    }
+  }
+}
