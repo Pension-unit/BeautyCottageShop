@@ -22,25 +22,42 @@ export default class home extends Component {
     column_list: [],
     // 推荐商品数据
     recommend_list: [],
-
+    //限时时间内容
+    hourText: "",
+    //限时分钟内容
+    minuteText: "",
+    //限时秒内容
+    secondText: "",
+    // 定时对象
+    timer:{},
     imgHeight: 176,
   }
   // 获取数据
   componentDidMount() {
     // 倒计时
-    setInterval(function () {
+    var that = this
+     this.setState({
+       timer:setInterval(function () {
         var nowtime = new Date(),  //获取当前时间
-          endtime = new Date(nowtime.getFullYear(),nowtime.getMonth(),nowtime.getDate(),nowtime.getHours()+3,0,0);  //定义结束时间
+          endtime = new Date(nowtime.getFullYear(), nowtime.getMonth(), nowtime.getDate(), nowtime.getHours()+3,0, 0);  //定义结束时间
         var lefttime = endtime.getTime() - nowtime.getTime(),  //距离结束时间的毫秒数       
-      // leftd = Math.floor(lefttime/(1000*60*60*24)),  //计算剩余天数
+          // leftd = Math.floor(lefttime/(1000*60*60*24)),  //计算剩余天数
           lefth = Math.floor(lefttime / (1000 * 60 * 60) % 24),  //计算剩余小时数
           leftm = Math.floor(lefttime / (1000 * 60) % 60),  //计算剩余分钟数
           lefts = Math.floor(lefttime / 1000 % 60);  //计算剩余秒数
-          console.log(endtime);
-      document.getElementsByClassName("flash-sale-hour")[0].innerHTML = lefth
-      document.getElementsByClassName("flash-sale-minute")[0].innerHTML = leftm
-      document.getElementsByClassName("flash-sale-second")[0].innerHTML = lefts
-    }, 1000)
+        // console.log(endtime);
+        that.setState({
+          hourText: lefth
+        })
+        console.log(that.state.hourText)
+        that.setState({
+          minuteText: leftm
+        })
+        that.setState({
+          secondText: lefts
+        })
+      }, 1000)
+     }) 
     // 请求轮播图数据
     axios.get('/swiper-list.json').then((res) => { this.setState({ swiper_list: res }) }).catch(err => console.log(err))
     // 请求限时抢购数据
@@ -49,6 +66,9 @@ export default class home extends Component {
     axios.get('/column-list.json').then((res) => { this.setState({ column_list: res }) }).catch(err => console.log(err))
     // 请求推荐商品数据
     axios.get('/recommend-list.json').then((res) => { console.log(res); this.setState({ recommend_list: res }) }).catch(err => console.log(err))
+  }
+  componentWillUnmount() {
+    clearInterval(this.state.timer);
   }
   render() {
     return (
@@ -108,9 +128,9 @@ export default class home extends Component {
             {/* 限时头部开始 */}
             <div className="flahs-sale-header">
               <h2 className="flash-sale-h2">限时抢购</h2>
-              <span className="flash-sale-hour"></span>:
-              <span className="flash-sale-minute"></span>:
-              <span className="flash-sale-second"></span>
+              <span className="flash-sale-hour">{this.state.hourText}</span>:
+              <span className="flash-sale-minute">{this.state.minuteText}</span>:
+              <span className="flash-sale-second">{this.state.secondText}</span>
             </div>
             {/* 限时头部结束    */}
             {/* 限时内容开始 */}
