@@ -1,18 +1,23 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
-export default class Cart extends Component {
+import "./Cart.scss";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom"
+class Cart extends Component {
   render() {
-    return <div className="bcCart">
+    return (
+      <div className="bcCart">
+        <div className="bcMobileTitle"></div>
         <div className="bcHeader">
-            <span>购物车</span>
+          <span>{this.props.num}</span>
         </div>
-    </div>;
+      </div>
+    );
   }
 }
-// const mapStateToProps = (state) => {
-//   return {
-//     num: state.payload.num,
-//   };
-// };
+const mapStateToProps = (state) => {
+  return {
+    num: state.numReducer.num,
+  };
+};
 
-// export default connect(mapStateToProps, null)(Cart);
+export default withRouter(connect(mapStateToProps, null)(Cart));
