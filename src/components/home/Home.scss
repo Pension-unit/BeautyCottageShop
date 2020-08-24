@@ -48,10 +48,14 @@
 }
 // 内容
 .content {
+  padding: 15px;
   background-color: #efeff4;
-  padding: 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   // 轮播
   .app-home-swiper {
+    // padding: 10px;
     a {
       img {
       }
@@ -59,7 +63,7 @@
   }
   // 限时
   .home-flash-sale {
-    margin-top: 20px;
+    margin-top: 10px;
     // background-color: yellow;
     background-color: white;
     height: 140px;
@@ -222,53 +226,56 @@
       }
     }
   }
-  // 推荐商品
-  .home-recommend-product {
-    // 商品标题
-    h2 {
-      color: #59595a; 
-      font-size: 14px;
-      padding: 15px 0 15px 0;
-    }
-    .recommend-product-list {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      // 推荐商品子选项
-      .recommend-product-item {
-        margin-bottom: 15px;
-        width: 165px;
-        background-color: white;
-        .recommend-product-img {
-          img {
-            width: 100%;
-          }
+ 
+}
+ // 推荐商品
+.home-recommend-product {
+  // 商品标题
+  h2 {
+    color: #59595a;
+    font-size: 14px;
+    padding: 15px 0 15px 15px;
+  }
+  .recommend-product-list {
+   
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    // 推荐商品子选项
+    .recommend-product-item {
+      margin-bottom: 15px;
+      width: 44.4vw;
+      background-color: white;
+      .recommend-product-img {
+        img {
+          width: 100%;
         }
-        // 商品描述
-        .product-explain-box{
-          height: 50px;
-          .recommend-product-explain {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            overflow: hidden;
-           
-            margin: 5px 10px 0px 10px;
-  
-            line-height: 18px;
-            // background-color: antiquewhite;
-          }
+      }
+      // 商品描述
+      .product-explain-box {
+        height: 50px;
+        .recommend-product-explain {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+
+          margin: 5px 10px 0px 10px;
+
+          line-height: 18px;
+          // background-color: antiquewhite;
         }
-       
-        // 推荐商品价格
-        .recommend-product-price {
-          b {
-            margin-left:10px;
-            // background-color: aqua;
-            display: block;
-            color: #ff0000;
-            margin-bottom:15px;
-          }
+      }
+
+      // 推荐商品价格
+      .recommend-product-price {
+        b {
+          margin-left: 10px;
+          // background-color: aqua;
+          display: block;
+          color: #ff0000;
+          margin-bottom: 15px;
         }
       }
     }
