@@ -4,7 +4,7 @@ import { Carousel } from "antd-mobile";
 // 引入样式
 import "./Home.scss"
 // 引入axios
-import axios from "axios"
+import axios from "../../utils/myaxios"
 // 引入轮播图片
 import LoopImg1 from "../../assets/images/p13.jpg"
 import LoopImg2 from "../../assets/images/p14.jpg"
@@ -18,27 +18,13 @@ import productImg4 from "../../assets/images/p19.png"
 import OnyOneImgUrl from "../../assets/images/u59.jpg"
 // 引入栏目图片
 import columnImg1 from "../../assets/images/pyq66.jpg"
+
+
 export default class home extends Component {
   state = {
     data: ['1', '2', '3'],
     // 返回的轮播图数据
-    swiper_list: [
-      {
-        loopimg_url: LoopImg1,
-        loopimg_href: "#",
-        loopimg_title: "",
-      },
-      {
-        loopimg_url: LoopImg2,
-        loopimg_href: "#",
-        loopimg_title: "",
-      },
-      {
-        loopimg_url: LoopImg3,
-        loopimg_href: "#",
-        loopimg_title: "",
-      }
-    ],
+    swiper_list: [],
     // 限时抢购数据
     flash_sale_product_list: [
       {
@@ -76,10 +62,10 @@ export default class home extends Component {
   // 获取数据
   componentDidMount(){
     console.log(LoopImg1);
-    axios.get('/data/swiper-list.json').then((res)=>{
-      console.log(res.data);
+    axios.get('/swiper-list.json').then((res)=>{
+      console.log(res);
       this.setState({
-        swiper_list:res.data
+        swiper_list:res
       })
     }).catch((err)=>{
       console.log(err);
@@ -180,13 +166,13 @@ export default class home extends Component {
               <span className="column-bottom-left">栏目送女友</span>
               <span className="column-bottom-right">
                 <i className="column-watch">
-                  <svg class="icon" aria-hidden="true">
+                  <svg className="icon" aria-hidden="true">
                     <use xlinkHref="#icon-zhibo-guankanrenshu"></use>
                   </svg>
                   <b>1921</b>
                 </i>
                 <i className="column-collect">
-                  <svg class="icon" aria-hidden="true">
+                  <svg className="icon" aria-hidden="true">
                     <use xlinkHref="#icon-shoucang1"></use>
                   </svg>
                   <b>173</b>
