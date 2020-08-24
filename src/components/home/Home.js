@@ -7,6 +7,8 @@ import "./Home.scss"
 import axios from "../../utils/myaxios"
 // 引入限购一套图片
 import OnyOneImgUrl from "../../assets/images/u59.jpg"
+//引入推荐商品图片
+import remmendProduct from "../../assets/images/p0.png"
 
 export default class home extends Component {
   state = {
@@ -17,24 +19,23 @@ export default class home extends Component {
     // 限购一套数据
     onlyOneImg: OnyOneImgUrl,
     // 栏目数据
-    column_list:[],
+    column_list: [],
+    // 推荐商品数据
+    recommend_list: [],
 
     imgHeight: 176,
   }
   // 获取数据
-  componentDidMount(){  
+  componentDidMount() {
+   
     // 请求轮播图数据
-    axios.get('/swiper-list.json').then((res)=>{this.setState({swiper_list:res})})
-    .catch((err)=>{
-      console.log(err);
-    })
+    axios.get('/swiper-list.json').then((res) => { this.setState({ swiper_list: res }) }).catch(err => console.log(err))
     // 请求限时抢购数据
-    axios.get('/flash-sale-product-list.json').then((res)=>{this.setState({flash_sale_product_list:res})})
-    .catch((err)=>{
-      console.log(err)
-    })
+    axios.get('/flash-sale-product-list.json').then((res) => { this.setState({ flash_sale_product_list: res }) }).catch(err => console.log(err))
     // 请求栏目数据
-    axios.get('/column-list.json').then((res)=>{this.setState({column_list:res})})
+    axios.get('/column-list.json').then((res) => { this.setState({ column_list: res }) }).catch(err => console.log(err))
+    // 请求推荐商品数据
+    axios.get('/recommend-list.json').then((res) => {  console.log(res);this.setState({ recommend_list: res }) }).catch(err=>console.log(err))
   }
   render() {
     return (
@@ -120,36 +121,58 @@ export default class home extends Component {
           {/* 限购一套结束 */}
           {/* 栏目开始 */}
           <div className="home-warp">
-            {this.state.column_list.map(v=>
+            {this.state.column_list.map(v =>
               <div className="home-column" key={v.column_url}>
-              <div className="column-header">
-                <img src={v.column_url}></img>
+                <div className="column-header">
+                  <img src={v.column_url}></img>
+                </div>
+                <div className="column-middle">
+                  <span className="column-title">{v.column_text_title}</span>
+                  <p className="column-text">{v.column_text_content}</p>
+                </div>
+                <div className="column-bottom">
+                  <span className="column-bottom-left">{v.column_explain}</span>
+                  <span className="column-bottom-right">
+                    <i className="column-watch">
+                      <svg className="icon" aria-hidden="true">
+                        <use xlinkHref="#icon-zhibo-guankanrenshu"></use>
+                      </svg>
+                      <b>{v.column_watch_num}</b>
+                    </i>
+                    <i className="column-collect">
+                      <svg className="icon" aria-hidden="true">
+                        <use xlinkHref="#icon-shoucang1"></use>
+                      </svg>
+                      <b>{v.column_collect_num}</b>
+                    </i>
+                  </span>
+                </div>
               </div>
-              <div className="column-middle">
-                <span className="column-title">{v.column_text_title}</span>
-                <p className="column-text">{v.column_text_content}</p>
-              </div>
-              <div className="column-bottom">
-                <span className="column-bottom-left">{v.column_explain}</span>
-                <span className="column-bottom-right">
-                  <i className="column-watch">
-                    <svg className="icon" aria-hidden="true">
-                      <use xlinkHref="#icon-zhibo-guankanrenshu"></use>
-                    </svg>
-                    <b>{v.column_watch_num}</b>
-                  </i>
-                  <i className="column-collect">
-                    <svg className="icon" aria-hidden="true">
-                      <use xlinkHref="#icon-shoucang1"></use>
-                    </svg>
-                    <b>{v.column_collect_num}</b>
-                  </i>
-                </span>
-              </div>
-            </div>
-              )}
-          </div>          
+            )}
+          </div>
           {/* 栏目结束 */}
+          {/* 推荐商品开始 */}
+          <div className="home-recommend-product">
+            <h2>推荐商品</h2>
+            <div className="recommend-product-list">
+              {/* 子项目开始 */}
+              {this.state.recommend_list.map(v=>
+                 <div className="recommend-product-item" key={v.id}>
+                 <div className="recommend-product-img">
+                   <img src={v.recommend_url} alt=""></img>
+                 </div>
+                 <div className="product-explain-box">
+                 <span className="recommend-product-explain">{v.recommend_text}</span>
+                 </div>
+                 <span className="recommend-product-price">
+                   <b>￥ {v.recommend_price}</b>
+                 </span>
+               </div> 
+                )}
+                {/* 子项目结束 */}
+            </div>
+          </div>
+          {/* 推荐商品结束 */}
         </div>
       </div >
     );
