@@ -1,8 +1,8 @@
 // 切换分类
-const SortToSceneAction = () => ({
+const SortToSceneAction = (a) => ({
   type : "SortToScene",
   payload: {
-    sort: "scene"
+    sort: "scene",
   }
 })
 

@@ -1,0 +1,271 @@
+[
+  {
+    "tab_title": "精选推荐",
+    "tab_type": "jx",
+    "content": [
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      },
+      {
+        "item_title": "五谷杂粮",
+        "item_icon": "#icon-wuguzaliang"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      }
+    ]
+  },
+  {
+    "tab_title": "商务文具",
+    "tab_type": "sw",
+    "content": [
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      },
+      {
+        "item_title": "五谷杂粮",
+        "item_icon": "#icon-wuguzaliang"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      },
+      {
+        "item_title": "五谷杂粮",
+        "item_icon": "#icon-wuguzaliang"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      }
+    ]
+  },
+  {
+    "tab_title": "家居生活",
+    "tab_type": "jj",
+    "content": [
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      },
+      {
+        "item_title": "五谷杂粮",
+        "item_icon": "#icon-wuguzaliang"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      },
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      }
+    ]
+  },
+  {
+    "tab_title": "数码家电",
+    "tab_type": "sm",
+    "content": [
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      },
+      {
+        "item_title": "五谷杂粮",
+        "item_icon": "#icon-wuguzaliang"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      }
+    ]
+  },
+  {
+    "tab_title": "工艺收藏",
+    "tab_type": "gy",
+    "content": [
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      }
+     
+    ]
+  },
+  {
+    "tab_title": "妈咪宝贝",
+    "tab_type": "mm",
+    "content": [
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      },
+      {
+        "item_title": "五谷杂粮",
+        "item_icon": "#icon-wuguzaliang"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      }
+    ]
+  },
+  {
+    "tab_title": "包装材料",
+    "tab_type": "bz",
+    "content": [
+      {
+        "item_title": "五谷杂粮",
+        "item_icon": "#icon-wuguzaliang"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      }
+    ]
+  },
+  {
+    "tab_title": "食品保健",
+    "tab_type": "sp",
+    "content": [
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      },
+      {
+        "item_title": "五谷杂粮",
+        "item_icon": "#icon-wuguzaliang"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      }
+    ]
+  },
+  {
+    "tab_title": "箱包皮具",
+    "tab_type": "xb",
+    "content": [
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      }
+    ]
+  },
+  {
+    "tab_title": "户外运动",
+    "tab_type": "hw",
+    "content": [
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      },
+      {
+        "item_title": "五谷杂粮",
+        "item_icon": "#icon-wuguzaliang"
+      },
+      {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      },
+      {
+        "item_title": "保健按摩",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "饮食养生",
+        "item_icon": "#icon-chuangyishenghuo"
+      },
+      {
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
+      }
+    ]
+  }
+]
