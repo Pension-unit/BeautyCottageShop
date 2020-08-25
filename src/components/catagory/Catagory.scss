@@ -262,9 +262,10 @@ body {
     .catagory-shop-wrap {
       .catagory-shop-item {
         display: flex;
-        width: 375px;
+        width: 100vw;
         height: 116px;
         align-items: center;
+        justify-content: center;
         // border: 1px solid black;
         .shop-item-left {
           margin-left: 10px;
