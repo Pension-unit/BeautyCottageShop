@@ -9,6 +9,8 @@ import axios from "../../utils/myaxios"
 // 引入限购一套图片
 import OnyOneImgUrl from "../../assets/images/u59.jpg"
 
+import {withRouter} from "react-router-dom"
+
 import { PullToRefresh } from 'antd-mobile';
 
 function genData() {
@@ -18,7 +20,11 @@ function genData() {
   }
   return dataArr;
 }
-export default class home extends Component {
+ class home extends Component {
+  searchProduct= (params) => {  
+    this.props.history.push("/seapro")
+  }
+  
   state = {
     // 返回的轮播图数据
     swiper_list: [],
@@ -108,7 +114,7 @@ export default class home extends Component {
             <svg className="icon icon_header_camera" aria-hidden="true">
               <use xlinkHref="#icon-xiangji"></use>
             </svg>
-            <input type="text" placeholder="输入关键字进行搜索" className="home-header-search"></input>
+            <input type="text" placeholder="输入关键字进行搜索" className="home-header-search" onFocus={this.searchProduct}></input>
           </div>
         </div>
         {/* 头部结束 */}
@@ -266,3 +272,4 @@ export default class home extends Component {
     );
   }
 }
+export default withRouter(home)
