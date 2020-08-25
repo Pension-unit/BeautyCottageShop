@@ -44,11 +44,12 @@ export default class home extends Component {
     down: true,
     height: 50,
     data: [],
-  
+    // 刷新接收的数据
+    newRecommend_list:[]
+
   }
   // 获取数据
   componentDidMount() {
-    console.log(123);
     // 倒计时
     var that = this
     this.setState({
@@ -213,7 +214,7 @@ export default class home extends Component {
           <div className="recommend-product-list">
             {/* 子项目开始 */}
             {this.state.recommend_list.map(v =>
-              <div className="recommend-product-item" key={v.id}>
+              <div className="recommend-product-item" key={v.id+Math.random() * 10000000000000000000000000}>
                 <div className="recommend-product-img">
                   <img src={v.recommend_url} alt=""></img>
                 </div>
@@ -230,29 +231,35 @@ export default class home extends Component {
         </div>
         {/* 推荐商品结束 */}
         <PullToRefresh
-        damping={100}
-        ref={el => this.ptr = el}
-        style={{
-          height: this.state.height,
-          overflow: 'auto',
-          touchAction:"pan-y"
-        }}
-        indicator={this.state.down ? {} : { deactivate: '上拉可以刷新' }}
-        direction={this.state.down ? 'up' : 'up'}
-        refreshing={this.state.refreshing}
-        onRefresh={() => {
-          this.setState({ refreshing: true });
-          setTimeout(() => {
-            this.setState({ refreshing: false });
-          }, 1000);
-        }}
-      >
-         {this.state.data.map(i => (
-          <div key={i} style={{ textAlign: 'center', padding: 20 }}>
-            {this.state.down ? '亮亮也是有底线的' : 'pull up'} 
-          </div>
-        ))}
-      </PullToRefresh>
+          damping={100}
+          ref={el => this.ptr = el}
+          style={{
+            height: this.state.height,
+            overflow: 'auto',
+            touchAction: "pan-y"
+          }}
+          indicator={this.state.down ? {} : { deactivate: '上拉可以刷新' }}
+          direction={this.state.down ? 'up' : 'up'}
+          refreshing={this.state.refreshing}
+          onRefresh={() => {
+            axios.get('/recommend-list.json')
+            .then((res) => {  this.setState({ newRecommend_list: res }) })
+              .catch(err => console.log(err))
+            this.setState({ refreshing: true });
+            
+            setTimeout(() => {
+              this.setState({ refreshing: false });
+             this.setState({recommend_list: this.state.recommend_list.concat(this.state.newRecommend_list)})
+             console.log(this.state.recommend_list)
+            }, 1000);
+          }}
+        >
+          {this.state.data.map(i => (
+            <div key={i} style={{ textAlign: 'center', padding: 20 }}>
+              {this.state.down ? '上拉可刷新' : 'pull up'}
+            </div>
+          ))}
+        </PullToRefresh>
       </div >
     );
   }
