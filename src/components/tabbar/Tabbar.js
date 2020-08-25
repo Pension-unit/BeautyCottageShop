@@ -45,7 +45,7 @@ class MyTabbar extends React.Component {
                         }}
                         data-seed="logId"
                     >
-                        {this.props.children}
+                        {this.props.location.pathname === '/'&&this.props.children}
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
