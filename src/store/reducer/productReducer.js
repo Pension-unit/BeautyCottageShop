@@ -1,4 +1,4 @@
-import { PROD, ADD, SUB, CCG, CIG, TCAL } from "../actionTypes";
+import { PROD, ADD, SUB, CCG, CIG, TCAL, Del } from "../actionTypes";
 const defaultState = {
   product_list: [], // 用户购物车列表
   totalPrice: 0, // 总价
@@ -22,7 +22,7 @@ export default (state = defaultState, action) => {
         newProduct_list.checkedNum += v.checked === true ? 1 : 0;
       });
     });
-    console.log(newProduct_list.totalPrice);
+    // console.log(newProduct_list.totalPrice);
   }
 
   switch (action.type) {
@@ -34,14 +34,14 @@ export default (state = defaultState, action) => {
       var shop = newProduct_list.product_list[action.payload.shopIndex];
       var product = shop.wdata[action.payload.productIndex];
       product.product_count += action.payload.step;
-      console.log(product.product_count);
+      // console.log(product.product_count);
 
       total();
       break;
     case SUB:
       var shop = newProduct_list.product_list[action.payload.shopIndex];
       var product = shop.wdata[action.payload.productIndex];
-      console.log(product.product_count);
+      // console.log(product.product_count);
       // 数量减到一 不进行操作
       if (product.product_count <= 1) break;
       product.product_count += action.payload.step;
@@ -61,9 +61,9 @@ export default (state = defaultState, action) => {
       });
       total();
 
-      console.log(newProduct_list.product_list);
+      // console.log(newProduct_list.product_list);
       for (let i in newProduct_list.product_list) {
-        console.log(newProduct_list.product_list[i]);
+        // console.log(newProduct_list.product_list[i]);
         if (newProduct_list.product_list[i].checkedAll) {
           newProduct_list.totalChecked = true;
         } else {
@@ -101,7 +101,7 @@ export default (state = defaultState, action) => {
       total();
       // products.map((v, i) => {
       // });
-      console.log(shop.checkedAll);
+      // console.log(shop.checkedAll);
       break;
     case TCAL:
       newProduct_list.totalChecked = !newProduct_list.totalChecked;
@@ -115,6 +115,21 @@ export default (state = defaultState, action) => {
         // console.log(v.wdata);
       });
       total();
+      break;
+    case Del:
+      // console.log(newProduct_list.product_list[action.payload.shopIndex].wdata)
+      newProduct_list.product_list[action.payload.shopIndex].wdata.splice(
+        action.payload.productIndex,
+        1
+      );
+      if (
+        newProduct_list.product_list[action.payload.shopIndex].wdata.length ===
+        0
+      ) {
+        newProduct_list.product_list.splice(action.payload.shopIndex, 1);
+      }
+      // 这里打印会报错, 因为删除到最后 wdata 已经没有了
+      // console.log(newProduct_list.product_list[action.payload.shopIndex].wdata.length)
       break;
   }
   // console.log(newProduct_list)

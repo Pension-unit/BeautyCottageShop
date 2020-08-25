@@ -5,6 +5,8 @@ import selected from "../../assets/images/selected_shopping_true.png";
 import arrows from "../../assets/images/x.png";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { Toast } from "antd-mobile";
+
 import {
   addAction,
   subAction,
@@ -12,6 +14,7 @@ import {
   checkedChange,
   checkedItemChange,
   totalCheckAllClick,
+  delAction,
 } from "../../store/actioncreator";
 class Cart extends Component {
   componentWillUnmount() {}
@@ -23,6 +26,51 @@ class Cart extends Component {
     // window.sessionStorage.setItem("isOnce", true);
     this.props.productList();
   }
+  handleTouchMove = (shopIndex, productIndex, e) => {
+    let bcContents = document.getElementsByClassName("bcContentBox");
+    // let products = document.getElementsByClassName("productsBox");
+    let parent = bcContents[shopIndex + this.props.userProductList.length];
+    let childBox = parent.children[productIndex + 1];
+
+    // console.log((this.moveX = e.touches[0].pageX - this.startX));
+    console.log(childBox.className);
+    this.moveX = e.touches[0].pageX - this.startX;
+    this.moveY = e.touches[0].pageY - this.startY;
+    // 纵向移动时return
+    if (Math.abs(this.moveY) > Math.abs(this.moveX)) {
+      return;
+    }
+    // 滑动超过一定距离时，才触发
+    if (Math.abs(this.moveX) < 10) {
+      return;
+    }
+    // 判断向左还是向右
+    if (this.moveX >= 0) {
+      childBox.className = "productsBox OriginP";
+      setTimeout(function () {
+        childBox.children[1].style.display = "none";
+        // childBox.children[1].style.visibility = "hidden";
+      }, 200);
+    } else {
+      if (childBox.className.indexOf("moveStyle") !== -1) {
+        return;
+      }
+      childBox.children[1].style.display = "block";
+      // childBox.children[1].style.visibility = "inherit";
+      childBox.className = "productsBox moveStyle";
+    }
+
+    // console.log(childBox.children[1]);
+    // console.log(bcContents[shopIndex + 2])
+    // console.log(shopIndex,productIndex);
+  };
+  handleTouchStart = (e) => {
+    this.startX = e.touches[0].pageX;
+    this.startY = e.touches[0].pageY;
+    // console.log(this.startX, this.startY);
+  };
+  handleTouchEnd = (e) => {};
+
   render() {
     return (
       <div className="bcCart">
@@ -35,7 +83,7 @@ class Cart extends Component {
         {/* 商品属性 */}
         <div className="bcContent">
           {this.props.userProductList.map((v, shopIndex) => {
-            return (
+            return v.wdata.length >= 1 ? (
               <div className="bcContentBox" key={v.shop_name}>
                 <div className="bcContentShopBox">
                   <div className="bcContentShop">
@@ -50,7 +98,17 @@ class Cart extends Component {
                 </div>
                 {v.wdata.map((v, productIndex) => {
                   return (
-                    <div className="productsBox" key={v.product_id}>
+                    <div
+                      className="productsBox"
+                      key={v.product_id}
+                      onTouchStart={this.handleTouchStart}
+                      onTouchMove={this.handleTouchMove.bind(
+                        this,
+                        shopIndex,
+                        productIndex
+                      )}
+                      onTouchEnd={this.handleTouchEnd}
+                    >
                       <div className="productContent">
                         <div
                           className="checked"
@@ -115,10 +173,36 @@ class Cart extends Component {
                           </div>
                         </div>
                       </div>
+                      <div className="scrollBtn">
+                        <div
+                          className="addToCollect"
+                          onClick={this.props.successToast.bind(
+                            this,
+                            shopIndex,
+                            productIndex
+                          )}
+                        >
+                          <span>移至</span>
+                          <span>收藏夹</span>
+                        </div>
+
+                        <div
+                          className="delProduct"
+                          onClick={this.props.handleDelClick.bind(
+                            this,
+                            shopIndex,
+                            productIndex
+                          )}
+                        >
+                          删除
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
               </div>
+            ) : (
+              ""
             );
           })}
         </div>
@@ -144,7 +228,13 @@ class Cart extends Component {
               <span>¥</span>
               <span>{this.props.totalPrice + ".00"}</span>
             </div>
-            <div className="placeAnOrder">
+            <div
+              className={
+                this.props.checkedNum === 0
+                  ? "placeAnOrder"
+                  : "placeAnOrder active"
+              }
+            >
               <span>下单</span>
             </div>
           </div>
@@ -154,7 +244,7 @@ class Cart extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state.productReducer);
+  // console.log(state.productReducer);
   return {
     // num: state.numReducer.num,
     // checked: state.productReducer.product_list.checked,
@@ -184,6 +274,13 @@ const mapDispatchToProps = (dispatch) => {
     },
     totalCheckAll: () => {
       dispatch(totalCheckAllClick());
+    },
+    handleDelClick: (shopIndex, productIndex) => {
+      dispatch(delAction(shopIndex, productIndex));
+    },
+    successToast: (shopIndex, productIndex) => {
+      dispatch(delAction(shopIndex, productIndex));
+      Toast.success("收藏成功", 1);
     },
   };
 };

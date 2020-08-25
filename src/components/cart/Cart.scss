@@ -58,10 +58,20 @@
           }
         }
       }
-
+      .moveStyle {
+        transform: translate(-150px);
+        transition: transform 0.3s ease;
+      }
+      .OriginP {
+        transform: translate(0);
+        transition: transform 0.3s ease;
+      }
       .productsBox {
         background-color: #fff;
         padding-top: 10px;
+        position: relative;
+        // width: calc(100vw + 150px);
+        // overflow: hidden;
         &::after {
           content: "";
           display: block;
@@ -70,6 +80,38 @@
           margin-left: 45px;
           background-color: #ddd;
           margin-top: 10px;
+        }
+        .scrollBtn {
+          display: none;
+          // visibility: hidden;
+          .addToCollect {
+            width: 75px;
+            height: 100%;
+            position: absolute;
+            right: -75px;
+            top: 0;
+            display: flex;
+            line-height: 20px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            background-color: #888888;
+            color: #fff;
+          }
+          .delProduct {
+            width: 75px;
+            height: 100%;
+            position: absolute;
+            right: -150px;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            background-color: #333333;
+            color: #fff;
+          }
         }
         .productContent {
           margin-left: 14px;
@@ -215,7 +257,7 @@
       .selectedCount {
         margin-left: 13px;
         span {
-            font-size: 16px;
+          font-size: 16px;
         }
       }
     }
@@ -227,8 +269,8 @@
         line-height: 50px;
         margin-right: 20px;
         span {
-            margin-right: 5px;
-            font-size: 16px;
+          margin-right: 5px;
+          font-size: 16px;
         }
       }
 
@@ -242,6 +284,26 @@
         span {
         }
       }
+      .active {
+        background-color: #333333;
+      }
     }
   }
+}
+.am-toast-text.am-toast-text-icon {
+  width: 185px;
+}
+.my-drawer {
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.my-drawer .am-drawer-sidebar {
+  background-color: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.my-drawer .am-drawer-sidebar .am-list {
+  width: 300px;
+  padding: 0;
 }

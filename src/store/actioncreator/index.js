@@ -1,4 +1,4 @@
-import { ADD, SUB, PROD, CCG, CIG, TCAL } from "../actionTypes";
+import { ADD, SUB, PROD, CCG, CIG, TCAL, Del } from "../actionTypes";
 import axios from "../../utils/myaxios";
 // 购物车加减
 const addAction = (shopIndex, productIndex) => {
@@ -29,7 +29,7 @@ const subAction = (shopIndex, productIndex) => {
 const getProductList = () => {
   return function (dispatch) {
     axios.get("/cartProducts.json").then((res) => {
-      console.log(res);
+      // console.log(res);
       let productList = res;
       dispatch({
         type: PROD,
@@ -56,6 +56,13 @@ const checkedItemChange = (shopIndex, productIndex) => ({
 const totalCheckAllClick = () => ({
   type: TCAL,
 });
+const delAction = (shopIndex, productIndex) => ({
+  type: Del,
+  payload: {
+    shopIndex,
+    productIndex,
+  },
+});
 
 export {
   addAction,
@@ -64,4 +71,5 @@ export {
   checkedChange,
   checkedItemChange,
   totalCheckAllClick,
+  delAction,
 };

@@ -7,4 +7,5 @@ const PROD = "PROD";
 const CCG = "CCG";
 const CIG = "CIG";
 const TCAL = "TCAL";
-export { ADD, SUB, PROD, CCG, CIG, TCAL };
+const Del = "Del";
+export { ADD, SUB, PROD, CCG, CIG, TCAL, Del };
