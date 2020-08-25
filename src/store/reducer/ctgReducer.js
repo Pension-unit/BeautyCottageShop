@@ -1,5 +1,5 @@
 const defaultState = {
-  ctgSort: "shop",
+  ctgSort: "scene",
 };
 
 export default (state = defaultState, action) => {

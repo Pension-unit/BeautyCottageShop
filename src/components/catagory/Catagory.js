@@ -7,7 +7,7 @@ import {
   SortToSceneAction,
   SortToProAction,
   SortToShopAction,
-} from "../../store/actionCreator/ctgActionCreator";
+} from "../../store/actioncreator/ctgActionCreator";
 
 class Catagory extends Component {
   constructor(props) {
