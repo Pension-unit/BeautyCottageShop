@@ -7,6 +7,9 @@ import Cart from "./components/cart/Cart"
 import Catagory from './components/catagory/Catagory'
 import Tabbar from './components/tabbar/Tabbar'
 import My from './components/my/My'
+import Particulars from './components/gift/product/Particulars.js'
+import Discuss from './components/gift/product/Discuss.js'
+import Shopping from './components/gift/product/Shopping.js'
 export default class App extends Component {
   render() {
     return (
@@ -16,6 +19,9 @@ export default class App extends Component {
           <Route exact path="/cart" render={() => <Tabbar><Cart></Cart></Tabbar>}></Route>
           <Route exact path="/catagory" render={() => <Tabbar><Catagory></Catagory></Tabbar>}></Route>
           <Route exact path="/gift" render={() => <Tabbar><Gift></Gift></Tabbar>}></Route>
+          <Route exact path="/gift/particulars" render={() => <Tabbar><Particulars></Particulars></Tabbar>}></Route>
+          <Route exact path="/gift/discuss" render={() => <Tabbar><Discuss></Discuss></Tabbar>}></Route>
+          <Route exact path="/gift/shopping" render={() => <Tabbar><Shopping></Shopping></Tabbar>}></Route>
           <Route exact path="/my" render={() => <Tabbar><My></My></Tabbar>}></Route>
         </Router>
       </div>
