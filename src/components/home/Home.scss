@@ -6,7 +6,7 @@
     position: relative;
     .icon_header-search {
       position: absolute;
-      font-size: 18px;
+      font-size: 16px;
       left: 27px;
       color: #cdcdcd;
       bottom: 6px;
@@ -14,7 +14,7 @@
 
     .icon_header_speak {
       position: absolute;
-      font-size: 18px;
+      font-size: 16px;
       bottom: 6px;
       right: 60px;
       color: #cdcdcd;
@@ -81,7 +81,7 @@
         font-size: 18px;
         margin-left: 15px;
       }
-
+      // 限时时
       .flash-sale-hour {
         color: white;
         border-radius: 4px;
@@ -92,7 +92,7 @@
         line-height: 20px;
         background-color: #525252;
       }
-
+      // 限时分
       .flash-sale-minute {
         color: white;
         border-radius: 4px;
@@ -103,7 +103,7 @@
         line-height: 20px;
         background-color: #525252;
       }
-
+      // 限时秒
       .flash-sale-second {
         color: white;
         border-radius: 4px;

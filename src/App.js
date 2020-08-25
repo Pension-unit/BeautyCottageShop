@@ -9,6 +9,8 @@ import Tabbar from './components/tabbar/Tabbar'
 import My from './components/my/My'
 import Register from './components/user/register/Register'
 import Login from './components/user/login/Login'
+// 引入搜索产品组件
+import SearchProduct from "./components/home/Searchproduct/Seartchproduct"
 
 export default class App extends Component {
   render() {
@@ -22,6 +24,7 @@ export default class App extends Component {
           <Route exact path="/my" render={() => <Tabbar><My></My></Tabbar>}></Route>
           <Route exact path='/register' render={()=><Register></Register>}></Route>
           <Route exact path='/login' render={()=><Login></Login>}></Route>
+          <Route exact path='/seapro' render={()=><SearchProduct></SearchProduct>}></Route>
         </Router>
       </div>
     )

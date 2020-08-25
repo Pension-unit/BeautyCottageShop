@@ -17,7 +17,7 @@ class MyTabbar extends React.Component {
 
     render() {
         return (
-            <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
+            <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0} : { height: 400 }}>
                 <TabBar
                     unselectedTintColor="#949494"
                     tintColor="#33A3F4"
@@ -25,10 +25,12 @@ class MyTabbar extends React.Component {
                     hidden={this.state.hidden}
                 >
                     <TabBar.Item
-                        title="首页"
+                        title={
+                            <span style={this.props.location.pathname==='/'? {color: "#FF0036"} : {color: "#BFBFBF"}}>首页</span>
+                        }
                         key="Home"
                         icon={
-                            <svg className="icon icon_home" aria-hidden="true" style={{color:"#000000"}}>
+                            <svg className="icon icon_home" aria-hidden="true">
                                 <use xlinkHref="#icon-yemian-copy-copy"></use>
                             </svg>
                         }
@@ -45,7 +47,7 @@ class MyTabbar extends React.Component {
                         }}
                         data-seed="logId"
                     >
-                        {this.props.children}
+                        {this.props.location.pathname === '/'&&this.props.children}
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
@@ -58,7 +60,9 @@ class MyTabbar extends React.Component {
                                 <use xlinkHref="#icon-zengsongliquan-copy"></use>
                             </svg>
                         }
-                        title="送礼攻略"
+                        title={
+                            <span style={this.props.location.pathname==='/gift'? {color: "#FF0036"} : {color: "#BFBFBF"}}>送礼攻略</span>
+                        }
                         key="Gift"
                         selected={this.props.location.pathname === '/gift'}
                         onPress={() => {
@@ -79,7 +83,9 @@ class MyTabbar extends React.Component {
                                 <use xlinkHref="#icon-leimupinleifenleileibie"></use>
                             </svg>
                         }
-                        title="分类"
+                        title={
+                            <span style={this.props.location.pathname==='/catagory'? {color: "#FF0036"} : {color: "#BFBFBF"}}>分类</span>
+                        }
                         key="Catagory"
                         selected={this.props.location.pathname === '/catagory'}
                         onPress={() => {
@@ -99,7 +105,9 @@ class MyTabbar extends React.Component {
                                 <use xlinkHref="#icon-gouwuche1"></use>
                             </svg>
                         }
-                        title="购物车"
+                        title={
+                            <span style={this.props.location.pathname==='/cart'? {color: "#FF0036"} : {color: "#BFBFBF"}}>购物车</span>
+                        }
                         key="Cart"
                         selected={this.props.location.pathname === '/cart'}
                         onPress={() => {
@@ -119,7 +127,9 @@ class MyTabbar extends React.Component {
                                 <use xlinkHref="#icon-wodedangxuan"></use>
                             </svg>
                         }
-                        title="我的"
+                        title={
+                            <span style={this.props.location.pathname==='/my'? {color: "#FF0036"} : {color: "#BFBFBF"}}>我的</span>
+                        }
                         key="My"
                         selected={this.props.location.pathname === '/my'}
                         onPress={() => {
