@@ -8,8 +8,11 @@ import "./Home.scss"
 import axios from "../../utils/myaxios"
 // 引入限购一套图片
 import OnyOneImgUrl from "../../assets/images/u59.jpg"
-
+// 引入刷新组件
 import { PullToRefresh } from 'antd-mobile';
+// 引入高阶组件来实现路由的跳转
+import {withRouter} from 'react-router-dom';
+
 
 function genData() {
   const dataArr = [];
@@ -18,7 +21,7 @@ function genData() {
   }
   return dataArr;
 }
-export default class home extends Component {
+ class home extends Component {
   state = {
     // 返回的轮播图数据
     swiper_list: [],
@@ -42,12 +45,19 @@ export default class home extends Component {
 
     refreshing: false,
     down: true,
-    height: 50,
+    height: 48,
     data: [],
     // 刷新接收的数据
     newRecommend_list:[]
 
   }
+  //事件
+  searchproduct = () => {
+   
+    this.props.history.push('/seapro')
+  }
+  
+  // onFocus
   // 获取数据
   componentDidMount() {
     // 倒计时
@@ -108,7 +118,7 @@ export default class home extends Component {
             <svg className="icon icon_header_camera" aria-hidden="true">
               <use xlinkHref="#icon-xiangji"></use>
             </svg>
-            <input type="text" placeholder="输入关键字进行搜索" className="home-header-search"></input>
+            <input type="text" placeholder="输入关键字进行搜索" className="home-header-search" onFocus={this.searchproduct}></input>
           </div>
         </div>
         {/* 头部结束 */}
@@ -230,7 +240,6 @@ export default class home extends Component {
           </div>
         </div>
         {/* 推荐商品结束 */}
-        {/* 下拉刷新开始 */}
         <PullToRefresh
           damping={100}
           ref={el => this.ptr = el}
@@ -257,12 +266,12 @@ export default class home extends Component {
         >
           {this.state.data.map(i => (
             <div key={i} style={{ textAlign: 'center', padding: 20 }}>
-              {this.state.down ? '上拉即可刷新' : 'pull up'}
+              {this.state.down ? '上拉可刷新' : 'pull up'}
             </div>
           ))}
         </PullToRefresh>
-
       </div >
     );
   }
 }
+export default withRouter(home)
