@@ -230,6 +230,7 @@ export default class home extends Component {
           </div>
         </div>
         {/* 推荐商品结束 */}
+        {/* 下拉刷新开始 */}
         <PullToRefresh
           damping={100}
           ref={el => this.ptr = el}
@@ -256,10 +257,11 @@ export default class home extends Component {
         >
           {this.state.data.map(i => (
             <div key={i} style={{ textAlign: 'center', padding: 20 }}>
-              {this.state.down ? '上拉可刷新' : 'pull up'}
+              {this.state.down ? '上拉即可刷新' : 'pull up'}
             </div>
           ))}
         </PullToRefresh>
+
       </div >
     );
   }
