@@ -1,6 +1,10 @@
 // 头部
+body {
+  background: #ffffff;
+}
+
 .catagory-header {
-  height: 60px;
+  height: 65px;
   background-color: #ff0036;
   .app-catagory-search {
     position: relative;
@@ -52,8 +56,9 @@
   width: 100vw;
   height: 46px;
   border: 1px solid pink;
-  border-bottom: 1px solid #CCCCCC;
+  border-bottom: 1px solid #cccccc;
   box-sizing: border-box;
+  //   margin-bottom: 7px;
   .catagory-tab {
     position: relative;
     top: 1px;
@@ -76,11 +81,301 @@
     }
 
     .active {
-        border-bottom: 2px solid #666666;
-        div {
-            font-family: '微软雅黑 Bold', '微软雅黑';
-            font-weight: 700;
-        }
+      border-bottom: 2px solid #666666;
+      div {
+        font-family: "微软雅黑 Bold", "微软雅黑";
+        font-weight: 700;
+      }
     }
   }
 }
+
+// 对象
+.catagory-type-ob {
+  .type-ob-header {
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .type-ob-title {
+      margin: 0 13px;
+      font-family: "STHeitiSC-Light", "Heiti SC Light", "Heiti SC";
+      font-weight: 200;
+      font-style: normal;
+      font-size: 13px;
+      color: #888888;
+    }
+    .type-ob-line {
+      width: 67px;
+      height: 1px;
+      background: #888888;
+    }
+  }
+
+  .type-ob-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .type-ob-content {
+      margin: 7px 0 7px 14px;
+      .type-ob-item {
+        width: 44.4vw;
+        height: 95px;
+        background: #f2f2f2;
+        border-radius: 5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .ob-item-left {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px;
+          .item-left-title {
+            font-family: "微软雅黑 Bold", "微软雅黑";
+            font-weight: 700;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 20px;
+            // margin-top: 20px;
+          }
+
+          .item-left-des {
+            font-family: "MicrosoftYaHei", "微软雅黑";
+            font-weight: 400;
+            font-style: normal;
+            font-size: 12px;
+            color: #666666;
+            line-height: 26px;
+            margin-top: 5px;
+          }
+        }
+
+        .ob-item-right {
+          margin-left: 10px;
+          svg {
+            color: #717171;
+            font-size: 52px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 风格
+.catagory-type-style {
+  .type-style-header {
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .type-style-title {
+      margin: 0 13px;
+      font-family: "STHeitiSC-Light", "Heiti SC Light", "Heiti SC";
+      font-weight: 200;
+      font-style: normal;
+      font-size: 13px;
+      color: #888888;
+    }
+    .type-style-line {
+      width: 67px;
+      height: 1px;
+      background: #888888;
+    }
+  }
+
+  .type-style-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .type-style-content {
+      margin: 7px 0 7px 14px;
+      .type-style-item {
+        width: 44.4vw;
+        height: 95px;
+        background: #f2f2f2;
+        border-radius: 5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .style-item-left {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px;
+          .item-left-title {
+            font-family: "微软雅黑 Bold", "微软雅黑";
+            font-weight: 700;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 20px;
+            // margin-top: 20px;
+          }
+
+          .item-left-des {
+            font-family: "MicrosoftYaHei", "微软雅黑";
+            font-weight: 400;
+            font-style: normal;
+            font-size: 12px;
+            color: #666666;
+            line-height: 26px;
+            margin-top: 5px;
+          }
+        }
+
+        .style-item-right {
+          margin-left: 10px;
+          svg {
+            color: #717171;
+            font-size: 52px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 商品分类
+.catagory-pro {
+  width: 100vw;
+  display: flex;
+  .catagory-pro-tab {
+    width: 86px;
+    .pro-tab-item {
+      background: #efeff4;
+      width: 86px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        text-rendering: optimizeLegibility;
+        color: #888888;
+      }
+    }
+    .active {
+      background: #ffffff;
+      span {
+        font-family: "Arial Negreta", "Arial Normal", Arial;
+        font-size: 14px;
+        font-weight: 700;
+        font-style: normal;
+        color: rgb(51, 51, 51);
+      }
+    }
+  }
+
+  .pro-right {
+    width: 286px;
+    padding-left: 9px;
+    padding-right: 9px;
+    .pro-right-header {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .header-title {
+        margin: 0 13px;
+        font-family: "STHeitiSC-Light", "Heiti SC Light", "Heiti SC";
+        font-weight: 200;
+        font-style: normal;
+        font-size: 13px;
+        color: #888888;
+
+      }
+      .header-line {
+        width: 44px;
+        height: 1px;
+        background: #888888;
+      }
+    }
+
+    .pro-right-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      .pro-content-item {
+        // border: 1px solid pink;
+        width: 89px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .pro-right-content-top {
+          svg {
+            color: #747474;
+            font-size: 32px;
+          }
+        }
+
+        .pro-right-content-bottom {
+          margin-top: 2px;
+          font-family: "MicrosoftYaHei", "Microsoft YaHei";
+          font-weight: 400;
+          font-style: normal;
+          font-size: 12px;
+          text-align: center;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
+
+// 精选店铺
+.catagory-shop {
+
+    .catagory-shop-wrap {
+      .catagory-shop-item {
+        display: flex;
+        width: 375px;
+        height: 116px;
+        align-items: center;
+        // border: 1px solid black;
+        .shop-item-left {
+          margin-left: 10px;
+          margin-right: 3px;
+          img {
+            width: 90px;
+            height: 90px;
+          }
+        }
+  
+        .shop-item-right {
+            margin-left: 10px;
+            height: 100%;
+            width: 255px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+          .shop-item-title {
+            font-family: '微软雅黑 Bold', '微软雅黑';
+            font-weight: 700;
+            font-style: normal;
+            font-size: 14px;
+          }
+  
+          .shop-item-des {
+            font-family: '微软雅黑';
+            font-weight: 410;
+            font-style: normal;
+            font-size: 14px;
+            color: #666666;
+          }
+  
+          .shop-item-rec {
+            font-family: '微软雅黑';
+            font-weight: 410;
+            font-style: normal;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
