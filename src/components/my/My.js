@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import axios from "../../utils/myaxios";
 import "./My.scss";
+import {withRouter} from 'react-router-dom';
 
-export default class My extends Component {
+class My extends Component {
   componentDidMount() {
     axios.get("/my.json")
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         this.setState({
             itemImg:res  
         })
@@ -18,6 +19,14 @@ export default class My extends Component {
   state = {
       itemImg: [],
   };
+
+
+  checkAllOrder  = () => {
+    console.log(this)
+    this.props.history.push('/register')
+  }
+  
+
   render() {
     return (
       <div>
@@ -37,7 +46,7 @@ export default class My extends Component {
           <div className="order-header">
             <h2>我的订单</h2>
             <div className="checkorder">
-              <div>查看全部订单</div>
+              <div onClick={this.checkAllOrder.bind(this)}>查看全部订单</div>
               <span> {">"} </span>
             </div>
           </div>
@@ -149,3 +158,5 @@ export default class My extends Component {
     );
   }
 }
+
+export default withRouter(My)

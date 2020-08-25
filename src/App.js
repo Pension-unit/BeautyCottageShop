@@ -7,6 +7,8 @@ import Cart from "./components/cart/Cart"
 import Catagory from './components/catagory/Catagory'
 import Tabbar from './components/tabbar/Tabbar'
 import My from './components/my/My'
+import Register from './components/user/register/Register'
+import Login from './components/user/login/Login'
 
 export default class App extends Component {
   render() {
@@ -18,6 +20,8 @@ export default class App extends Component {
           <Route exact path="/catagory" render={() => <Tabbar><Catagory></Catagory></Tabbar>}></Route>
           <Route exact path="/gift" render={() => <Tabbar><Gift></Gift></Tabbar>}></Route>
           <Route exact path="/my" render={() => <Tabbar><My></My></Tabbar>}></Route>
+          <Route exact path='/register' render={()=><Register></Register>}></Route>
+          <Route exact path='/login' render={()=><Login></Login>}></Route>
         </Router>
       </div>
     )
