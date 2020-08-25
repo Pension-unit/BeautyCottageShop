@@ -25,6 +25,11 @@ class My extends Component {
     console.log(this)
     this.props.history.push('/register')
   }
+
+  setProfile = () => {
+    this.props.history.push('/profile')
+  }
+  
   
 
   render() {
@@ -36,7 +41,7 @@ class My extends Component {
             <img></img>
           </div>
           <div className="header-profileName"> 梅梅 </div>
-          <svg className="icon" aria-hidden="true">
+          <svg className="icon" aria-hidden="true" onClick={this.setProfile}>
             <use xlinkHref="#icon-shezhi"></use>
           </svg>
         </div>
