@@ -1,14 +1,12 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_URL,
-  // 请求超时
+  baseURL: 'http://s.linweiqin.com/api/s/',
   timeout: 1000,
 });
 
 instance.interceptors.request.use(
   function (config) {
-
     let userInfo = JSON.parse(localStorage.getItem("userinfo")) || {};
     let oauth_token = userInfo.oauth_token;
     if (oauth_token && config.data) {

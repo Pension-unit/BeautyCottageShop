@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "flash_sale_product_url": "/images/p16.png",
+        "flash_sale_product_price": 69,
+        "flash_sale_product_residue": 35
+    },
+    {
+        "id": 2,
+        "flash_sale_product_url": "/images/p17.png",
+        "flash_sale_product_price": 70,
+        "flash_sale_product_residue": 68
+    },
+    {
+        "id": 3,
+        "flash_sale_product_url": "/images/p18.png",
+        "flash_sale_product_price": 74,
+        "flash_sale_product_residue": 41
+    },
+    {
+        "id": 4,
+        "flash_sale_product_url": "/images/p19.png",
+        "flash_sale_product_price": 73,
+        "flash_sale_product_residue": 106
+    }
+]
