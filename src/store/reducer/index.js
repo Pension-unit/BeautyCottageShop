@@ -1,3 +1,4 @@
 import { combineReducers } from "redux";
 import numReducer from "./numReducer";
-export default combineReducers({ numReducer });
+import productReducer from "./productReducer";
+export default combineReducers({ numReducer, productReducer });
