@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "../../utils/myaxios";
 import "./My.scss";
 import {withRouter} from 'react-router-dom';
+// import {connect} from 'react-redux';
 
 class My extends Component {
   componentDidMount() {
@@ -19,7 +20,6 @@ class My extends Component {
   state = {
       itemImg: [],
   };
-
 
   checkAllOrder  = () => {
     console.log(this)
@@ -159,4 +159,11 @@ class My extends Component {
   }
 }
 
+// const mapStateToProps = (state) => {
+//   return {
+//     itemImg: state.itemImg
+//   }
+// }
+
 export default withRouter(My)
+// export default withRouter(connect(mapStateToProps, null)(My))
