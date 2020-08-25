@@ -22,12 +22,42 @@ export default class home extends Component {
     column_list: [],
     // 推荐商品数据
     recommend_list: [],
-
+    //限时时间内容
+    hourText: "",
+    //限时分钟内容
+    minuteText: "",
+    //限时秒内容
+    secondText: "",
+    // 定时对象
+    timer:{},
     imgHeight: 176,
   }
   // 获取数据
   componentDidMount() {
-   
+    // 倒计时
+    var that = this
+     this.setState({
+       timer:setInterval(function () {
+        var nowtime = new Date(),  //获取当前时间
+          endtime = new Date(nowtime.getFullYear(), nowtime.getMonth(), nowtime.getDate(), nowtime.getHours()+3,0, 0);  //定义结束时间
+        var lefttime = endtime.getTime() - nowtime.getTime(),  //距离结束时间的毫秒数       
+          // leftd = Math.floor(lefttime/(1000*60*60*24)),  //计算剩余天数
+          lefth = Math.floor(lefttime / (1000 * 60 * 60) % 24),  //计算剩余小时数
+          leftm = Math.floor(lefttime / (1000 * 60) % 60),  //计算剩余分钟数
+          lefts = Math.floor(lefttime / 1000 % 60);  //计算剩余秒数
+        // console.log(endtime);
+        that.setState({
+          hourText: lefth
+        })
+        console.log(that.state.hourText)
+        that.setState({
+          minuteText: leftm
+        })
+        that.setState({
+          secondText: lefts
+        })
+      }, 1000)
+     }) 
     // 请求轮播图数据
     axios.get('/swiper-list.json').then((res) => { this.setState({ swiper_list: res }) }).catch(err => console.log(err))
     // 请求限时抢购数据
@@ -35,7 +65,10 @@ export default class home extends Component {
     // 请求栏目数据
     axios.get('/column-list.json').then((res) => { this.setState({ column_list: res }) }).catch(err => console.log(err))
     // 请求推荐商品数据
-    axios.get('/recommend-list.json').then((res) => {  console.log(res);this.setState({ recommend_list: res }) }).catch(err=>console.log(err))
+    axios.get('/recommend-list.json').then((res) => { console.log(res); this.setState({ recommend_list: res }) }).catch(err => console.log(err))
+  }
+  componentWillUnmount() {
+    clearInterval(this.state.timer);
   }
   render() {
     return (
@@ -95,9 +128,9 @@ export default class home extends Component {
             {/* 限时头部开始 */}
             <div className="flahs-sale-header">
               <h2 className="flash-sale-h2">限时抢购</h2>
-              <span className="flash-sale-hour">02</span>:
-              <span className="flash-sale-minute">59</span>:
-              <span className="flash-sale-second">38</span>
+              <span className="flash-sale-hour">{this.state.hourText}</span>:
+              <span className="flash-sale-minute">{this.state.minuteText}</span>:
+              <span className="flash-sale-second">{this.state.secondText}</span>
             </div>
             {/* 限时头部结束    */}
             {/* 限时内容开始 */}
@@ -151,29 +184,30 @@ export default class home extends Component {
             )}
           </div>
           {/* 栏目结束 */}
-          {/* 推荐商品开始 */}
-          <div className="home-recommend-product">
-            <h2>推荐商品</h2>
-            <div className="recommend-product-list">
-              {/* 子项目开始 */}
-              {this.state.recommend_list.map(v=>
-                 <div className="recommend-product-item" key={v.id}>
-                 <div className="recommend-product-img">
-                   <img src={v.recommend_url} alt=""></img>
-                 </div>
-                 <div className="product-explain-box">
-                 <span className="recommend-product-explain">{v.recommend_text}</span>
-                 </div>
-                 <span className="recommend-product-price">
-                   <b>￥ {v.recommend_price}</b>
-                 </span>
-               </div> 
-                )}
-                {/* 子项目结束 */}
-            </div>
-          </div>
-          {/* 推荐商品结束 */}
+
         </div>
+        {/* 推荐商品开始 */}
+        <div className="home-recommend-product">
+          <h2>推荐商品</h2>
+          <div className="recommend-product-list">
+            {/* 子项目开始 */}
+            {this.state.recommend_list.map(v =>
+              <div className="recommend-product-item" key={v.id}>
+                <div className="recommend-product-img">
+                  <img src={v.recommend_url} alt=""></img>
+                </div>
+                <div className="product-explain-box">
+                  <span className="recommend-product-explain">{v.recommend_text}</span>
+                </div>
+                <span className="recommend-product-price">
+                  <b>￥ {v.recommend_price}</b>
+                </span>
+              </div>
+            )}
+            {/* 子项目结束 */}
+          </div>
+        </div>
+        {/* 推荐商品结束 */}
       </div >
     );
   }
