@@ -227,7 +227,9 @@ class Shopping extends Component {
 
                 <div className="shopping_foot">
                     <div className="shopping_cart shopx">
-                        <svg className="icon" aria-hidden="true">
+                        <svg 
+                        onClick={() => this.props.history.push('/cart')}
+                        className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-gouwuche"></use>
                         </svg>
                     </div>
@@ -237,7 +239,9 @@ class Shopping extends Component {
                         </svg>
                     </div>
                     <div className="shopping_join shopxx">加入购物车</div>
-                    <div className="shopping_buy shopxx">立即购买</div>
+                    <div className="shopping_buy shopxx"
+                    // onClick={() => this.props.history.push('/')}
+                    >立即购买</div>
                 </div>
 
             </div>
