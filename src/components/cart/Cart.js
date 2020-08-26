@@ -3,6 +3,8 @@ import "./Cart.scss";
 import unSelected from "../../assets/images/selected_shopping.png";
 import selected from "../../assets/images/selected_shopping_true.png";
 import arrows from "../../assets/images/x.png";
+import mz from "../../assets/images/mz_pink.png";
+import Close from "../../assets/images/close.png";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Toast } from "antd-mobile";
@@ -24,9 +26,17 @@ class Cart extends Component {
     //   return false;
     // }
     // window.sessionStorage.setItem("isOnce", true);
-    this.props.productList();
+    if (this.props.userProductList.length === 0) {
+      this.props.productList();
+    }
+
   }
   handleTouchMove = (shopIndex, productIndex, e) => {
+    console.log(this.currentPre);
+    if (this.currentPre) {
+      this.childBox.className = "productsBox OriginP";
+      this.currentPre.style.display = "none";
+    }
     let bcContents = document.getElementsByClassName("bcContentBox");
     // let products = document.getElementsByClassName("productsBox");
     let parent = bcContents[shopIndex + this.props.userProductList.length];
@@ -47,10 +57,8 @@ class Cart extends Component {
     // 判断向左还是向右
     if (this.moveX >= 0) {
       childBox.className = "productsBox OriginP";
-      setTimeout(function () {
-        childBox.children[1].style.display = "none";
-        // childBox.children[1].style.visibility = "hidden";
-      }, 200);
+      childBox.children[1].style.display = "none";
+      // childBox.children[1].style.visibility = "hidden";
     } else {
       if (childBox.className.indexOf("moveStyle") !== -1) {
         return;
@@ -60,6 +68,7 @@ class Cart extends Component {
       childBox.className = "productsBox moveStyle";
     }
 
+    // let current = childBox.children[1];
     // console.log(childBox.children[1]);
     // console.log(bcContents[shopIndex + 2])
     // console.log(shopIndex,productIndex);
@@ -69,7 +78,38 @@ class Cart extends Component {
     this.startY = e.touches[0].pageY;
     // console.log(this.startX, this.startY);
   };
-  handleTouchEnd = (e) => {};
+  handleTouchEnd = (shopIndex, productIndex, e) => {
+    let bcContents = document.getElementsByClassName("bcContentBox");
+    // let products = document.getElementsByClassName("productsBox");
+    let parent = bcContents[shopIndex + this.props.userProductList.length];
+    this.childBox = parent.children[productIndex + 1];
+    this.currentPre = this.childBox.children[1];
+    // console.log(this.currentPre);
+  };
+  handleShowClick = () => {
+    // 盒子
+    let showBox = document.getElementsByClassName("hiddenBox");
+    // 遮罩
+    let shadeBox = document.getElementsByClassName("shade");
+    shadeBox[1].className = "shade shadeActive";
+
+    console.log(shadeBox[1]);
+    console.log(showBox[1]);
+
+    showBox[1].style.zIndex = 99999;
+    showBox[1].className = "hiddenBox show";
+  };
+  handleHideClick = () => {
+    let showBox = document.getElementsByClassName("hiddenBox");
+    // 遮罩
+    let shadeBox = document.getElementsByClassName("shade");
+    shadeBox[1].className = "shade";
+
+    showBox[1].className = "hiddenBox hide";
+    setTimeout(function () {
+      showBox[1].style.zIndex = 1;
+    }, 500);
+  };
 
   render() {
     return (
@@ -107,7 +147,11 @@ class Cart extends Component {
                         shopIndex,
                         productIndex
                       )}
-                      onTouchEnd={this.handleTouchEnd}
+                      onTouchEnd={this.handleTouchEnd.bind(
+                        this,
+                        shopIndex,
+                        productIndex
+                      )}
                     >
                       <div className="productContent">
                         <div
@@ -125,7 +169,10 @@ class Cart extends Component {
                         </div>
                         <div className="productInfo">
                           <span>{v.product_name}</span>
-                          <div className="productSpecBox">
+                          <div
+                            className="productSpecBox"
+                            onClick={this.handleShowClick}
+                          >
                             <div>
                               <span>已选择：</span>
                               <span className="productSpec">
@@ -239,6 +286,54 @@ class Cart extends Component {
             </div>
           </div>
         </div>
+        {/* 商品属性弹出框开始 */}
+        <div className="hiddenBox">
+          <div className="hiddenBoxHeader">
+            <div className="headerImg">
+              <img src={mz} alt="" />
+            </div>
+            <div className="headerPrice">
+              <div>
+                价格: <span className="money">¥ 159</span>
+              </div>
+            </div>
+            <div className="closeHiddenBox" onClick={this.handleHideClick}>
+              <img src={Close} alt="" />
+            </div>
+          </div>
+          <div className="hiddenContent">
+            <div className="color">
+              <p className="title">颜色</p>
+              <div className="options">
+                <div className="optionItem">香芋紫</div>
+                <div className="optionItem">粉色</div>
+                <div className="optionItem">白色</div>
+              </div>
+            </div>
+            <div className="size">
+              <p className="title">尺码</p>
+              <div className="options">
+                <div className="optionItem">55-65cm</div>
+                <div className="optionItem">65-75cm</div>
+                <div className="optionItem">75-85cm</div>
+              </div>
+            </div>
+            <div className="num">
+              <p className="title">数量</p>
+              <div className="numBtn">
+                <div className="sub">-</div>
+                <div className="count">1</div>
+                <div className="add">+</div>
+              </div>
+            </div>
+          </div>
+          <div className="hiddenFooter" onClick={this.handleHideClick}>
+            <div className="footerBtn">完成</div>
+          </div>
+        </div>
+        {/* 商品属性弹出框结束 */}
+        {/* 遮罩 */}
+        <div className="shade" onClick={this.handleHideClick}></div>
       </div>
     );
   }
