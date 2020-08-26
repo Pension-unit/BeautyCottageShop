@@ -12,6 +12,8 @@ import Login from './components/user/login/Login'
 // 引入搜索产品组件
 import SearchProduct from "./components/home/Searchproduct/Seartchproduct"
 import Profile from "./components/my/profile/Profile"
+import Shopcollect from "./components/my/shopCollect/myShop"
+import Coupon from "./components/my/coupon/Coupon"
 
 export default class App extends Component {
   render() {
@@ -27,6 +29,8 @@ export default class App extends Component {
           <Route exact path='/login' render={()=><Login></Login>}></Route>
           <Route exact path='/seapro' render={()=><SearchProduct></SearchProduct>}></Route>
           <Route exact path='/profile' render={()=><Profile></Profile>}></Route>
+          <Route exact path='/shopcollect' render={()=><Shopcollect></Shopcollect>}></Route>
+          <Route exact path='/coupon' render={()=><Coupon></Coupon>}></Route>
         </Router>
       </div>
     )

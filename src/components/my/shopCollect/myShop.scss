@@ -1,0 +1,29 @@
+.shopCollect{
+  .header{
+    height: 60px;
+    display: flex;
+    background-color: #37373c;
+    color: white;
+    line-height: 60px;
+    position: relative;
+    span{
+      font-size: 30px;
+      margin-left: 20px;
+    }
+    h2{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .shopList{
+    width: 100%;
+    .shop{
+      width: 33.33%;
+      outline-width: 0px;
+      vertical-align: top;
+      border: none;
+    }
+  }
+}
