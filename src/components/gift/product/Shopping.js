@@ -64,7 +64,7 @@ class Shopping extends Component {
                 <div className="nav">
                     <div className="nav_back aa">
                         <svg 
-                        onClick={() => this.props.history.push('/gift/particulars')}
+                        onClick={() => this.props.history.go(-1)}
                         className="icon" 
                         aria-hidden="true"  >
                             <use xlinkHref="#icon-arrow-left"></use>
@@ -237,7 +237,12 @@ class Shopping extends Component {
                         </svg>
                     </div>
                     <div className="shopping_join shopxx">加入购物车</div>
-                    <div className="shopping_buy shopxx">立即购买</div>
+                    <div className="shopping_buy shopxx"
+                    onClick={(params) => {
+                        this.props.history.push("/payType")
+                    }
+                    }
+                    >立即购买</div>
                 </div>
 
             </div>

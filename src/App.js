@@ -14,6 +14,8 @@ import Register from './components/user/register/Register'
 import Login from './components/user/login/Login'
 import ProList from './components/catagory/ProList'
 import ShopInfo from './components/catagory/ShopInfo'
+import PayType from './components/pay/PayType'
+import QRCode from './components/pay/QRCode'
 // 引入搜索产品组件
 import SearchProduct from "./components/home/Searchproduct/Seartchproduct"
 import Profile from "./components/my/profile/Profile"
@@ -60,6 +62,8 @@ export default class App extends Component {
             <Route exact path='/feedback' render={()=><Feedback></Feedback>}></Route>
             <Route exact path='/order' render={()=><Order></Order>}></Route>
             <Route exact path='/404' render={()=><PageNotFound></PageNotFound>}></Route>
+            <Route exact path="/payType" render={() => <PayType></PayType>}></Route>
+            <Route exact path="/qrCode" render={() => <QRCode></QRCode>}></Route>
             <Redirect to='/404'></Redirect>
             </Switch>
           </Router>

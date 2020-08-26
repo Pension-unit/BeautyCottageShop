@@ -3,7 +3,7 @@ import "./ShopInfo.scss";
 import axios from "../../utils/myaxios";
 import { withRouter } from "react-router-dom";
 import { NavBar, Icon } from "antd-mobile";
-import { Toast, Button, WhiteSpace, WingBlank } from "antd-mobile";
+import { Toast, Button } from "antd-mobile";
 import { connect } from "react-redux";
 import {
   SortToSceneAction,
@@ -45,7 +45,7 @@ class ShopInfo extends Component {
       })
       .catch((err) => console.log(err));
 
-      this.props.SortToScene();
+    this.props.SortToScene();
   }
 
   render() {
@@ -121,6 +121,9 @@ class ShopInfo extends Component {
               <div
                 className="recommend-product-item"
                 key={v.id + Math.random()}
+                onClick={(params) => {
+                  this.props.history.push("/gift/shopping");
+                }}
               >
                 <div className="recommend-product-img">
                   <img src={v.recommend_url} alt=""></img>
@@ -140,12 +143,14 @@ class ShopInfo extends Component {
         </div>
 
         {/* 店铺简介 */}
-        <div className="shop-info-wrap"
-        style={
-          this.props.ctgSort === "pro"
-            ? { display: "block" }
-            : { display: "none" }
-        }>
+        <div
+          className="shop-info-wrap"
+          style={
+            this.props.ctgSort === "pro"
+              ? { display: "block" }
+              : { display: "none" }
+          }
+        >
           <div className="shop-info-list">
             <div className="shop-info-left">
               <div className="shop-info-title top">个人信息</div>
