@@ -122,6 +122,10 @@
         "item_icon": "#icon-chuangyishenghuo"
       },
       {
+        "item_title": "茗茶",
+        "item_icon": "#icon-shuiyinmingcha"
+      },
+      {
         "item_title": "休闲食品",
         "item_icon": "#icon-shipin-copy"
       },
@@ -130,16 +134,8 @@
         "item_icon": "#icon-wuguzaliang"
       },
       {
-        "item_title": "茗茶",
-        "item_icon": "#icon-shuiyinmingcha"
-      },
-      {
         "item_title": "饮食养生",
         "item_icon": "#icon-chuangyishenghuo"
-      },
-      {
-        "item_title": "休闲食品",
-        "item_icon": "#icon-shipin-copy"
       },
       {
         "item_title": "茗茶",
@@ -176,24 +172,8 @@
         "item_icon": "#icon-wuguzaliang"
       },
       {
-        "item_title": "茗茶",
-        "item_icon": "#icon-shuiyinmingcha"
-      },
-      {
         "item_title": "休闲食品",
         "item_icon": "#icon-shipin-copy"
-      },
-      {
-        "item_title": "饮食养生",
-        "item_icon": "#icon-chuangyishenghuo"
-      },
-      {
-        "item_title": "休闲食品",
-        "item_icon": "#icon-shipin-copy"
-      },
-      {
-        "item_title": "五谷杂粮",
-        "item_icon": "#icon-wuguzaliang"
       },
       {
         "item_title": "茗茶",
@@ -294,21 +274,21 @@
         "item_icon": "#icon-chuangyishenghuo"
       },
       {
-        "item_title": "休闲食品",
-        "item_icon": "#icon-shipin-copy"
-      },
-      {
         "item_title": "五谷杂粮",
         "item_icon": "#icon-wuguzaliang"
       },
       {
-        "item_title": "茗茶",
-        "item_icon": "#icon-shuiyinmingcha"
+        "item_title": "休闲食品",
+        "item_icon": "#icon-shipin-copy"
       },
       {
         "item_title": "休闲食品",
         "item_icon": "#icon-shipin-copy"
       },
+              {
+                "item_title": "茗茶",
+                "item_icon": "#icon-shuiyinmingcha"
+              },
       {
         "item_title": "五谷杂粮",
         "item_icon": "#icon-wuguzaliang"
@@ -346,10 +326,6 @@
       {
         "item_title": "茗茶",
         "item_icon": "#icon-shuiyinmingcha"
-      },
-      {
-        "item_title": "保健按摩",
-        "item_icon": "#icon-anmo"
       },
       {
         "item_title": "休闲食品",

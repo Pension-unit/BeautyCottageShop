@@ -55,10 +55,11 @@ class Catagory extends Component {
       <div>
         {/* 头部开始 */}
         <div className="catagory-header" style={
-                this.props.ctgSort === "scene"
-                  ? {}
-                  : {background: "#343339"}
-              }>
+          this.props.ctgSort === "scene"
+          ? {}
+          : {background: "#343339"}
+        }>
+        <div className="catagory-list-header-top"></div>
           <div className="app-catagory-search">
             <svg className="icon icon_header-search" aria-hidden="true">
               <use xlinkHref="#icon-sousuo"></use>
