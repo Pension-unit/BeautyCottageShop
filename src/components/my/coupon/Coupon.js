@@ -5,7 +5,7 @@ import axios from '../../../utils/myaxios'
 
 class Coupon extends Component {
   backToPre = () => {
-    this.props.history.push('/my')
+    this.props.history.go(-1)
   }
   
   state = {
@@ -68,7 +68,7 @@ class Coupon extends Component {
                 </div>
               </div>
             ))}
-            
+
           </div>
         </div>
 

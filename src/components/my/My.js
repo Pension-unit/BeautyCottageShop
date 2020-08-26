@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "../../utils/myaxios";
 import "./My.scss";
 import {withRouter} from 'react-router-dom';
-// import {connect} from 'react-redux';
 
 class My extends Component {
   componentDidMount() {
@@ -21,25 +20,39 @@ class My extends Component {
       itemImg: [],
   };
 
+  //跳转订单页面
   checkAllOrder  = () => {
     console.log(this)
-    this.props.history.push('/register')
+    this.props.history.push('/order')
   }
-
+  //跳转个人信息设置
   setProfile = () => {
     this.props.history.push('/profile')
   }
+  //跳转店铺收藏页面
   followShop = () => {
     this.props.history.push('/shopcollect')
   }
+  //跳转优惠券页面
   mycoupon = () => {
     this.props.history.push('/coupon')
   }
+  //跳转意见反馈页面
+  toFeedback = () => {
+    this.props.history.push('/feedback')
+  }
+  //跳转文章收藏页面
+  toArticle = () => {
+    this.props.history.push('/artcol')
+  }
+  //跳转商品收藏页面
+  itemCollect = () => {
+    this.props.history.push('/itemcol')
+  }
   
-
   render() {
     return (
-      <div>
+      <div className='myComp'>
         {/* 头部 */}
         <div className="my-header">
           <div className="header-profileImg">
@@ -95,7 +108,7 @@ class My extends Component {
         </div>
 
         {/* 商品收藏 */}
-        <div className="item-collect">
+        <div className="item-collect" onClick={this.itemCollect}>
           <div className="title">
             <h2>商品收藏</h2>
             <span> {">"} </span>
@@ -109,7 +122,7 @@ class My extends Component {
 
         <div className="pay-attention">
           {/* 文章收藏 */}
-          <div className="article-collect same">
+          <div className="article-collect same" onClick={this.toArticle}>
             <div className="left">
               <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#icon-shoucang1"></use>
@@ -154,7 +167,7 @@ class My extends Component {
             <span> {">"} </span>
           </div>
           {/* 意见反馈 */}
-          <div className="feedback same">
+          <div className="feedback same" onClick={this.toFeedback}>
             <div className="left">
               <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#icon-pinglun"></use>
@@ -169,11 +182,4 @@ class My extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     itemImg: state.itemImg
-//   }
-// }
-
 export default withRouter(My)
-// export default withRouter(connect(mapStateToProps, null)(My))
