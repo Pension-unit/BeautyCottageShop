@@ -32,7 +32,7 @@ class Discuss extends Component {
                 <NavBar className="navBar"
                     mode="light"
                     icon={<Icon type="left" style={{color:"#000000"}} />}
-                    onClick={() => this.props.history.push('/gift/particulars')}
+                    onClick={() => this.props.history.go(-1)}
                     >评论</NavBar>
 
                 <div className="discuss_one">

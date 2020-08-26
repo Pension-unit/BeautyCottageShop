@@ -227,7 +227,8 @@ class Shopping extends Component {
 
                 <div className="shopping_foot">
                     <div className="shopping_cart shopx">
-                        <svg className="icon" aria-hidden="true">
+                        <svg 
+                        className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-gouwuche"></use>
                         </svg>
                     </div>
