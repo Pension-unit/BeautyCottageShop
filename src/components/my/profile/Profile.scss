@@ -1,0 +1,60 @@
+.my-profile{
+  width: 100vw;
+  height: 100vh;
+  background-color: #efeff4;
+
+  
+  .header{
+    width: 100%;
+    height: 60px;
+    background-color: #38383d;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    div{
+      font-size: 30px;
+      margin-left: 20px;
+    }
+    h2{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .sameCss{
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    line-height: 60px;
+    font-size: 18px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    span{
+      font-size: 30px;
+      color: #ccc;
+    }
+  }
+  .address{
+    margin-bottom: 30px;
+  }
+
+  .changeMM{
+    margin-bottom: 30px;
+  }
+
+  .about{
+    margin-bottom: 80px;
+  }
+
+  .logout{
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    font-size: 18px;
+  }
+}

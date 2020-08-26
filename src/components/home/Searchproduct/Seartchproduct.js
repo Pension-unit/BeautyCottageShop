@@ -85,7 +85,7 @@ class SearchProduct extends Component {
 						showCancelButton
 						onChange={(value) => {
 							this.onChange(value)
-							console.log(value);
+							// console.log(value);
 						}}
 					/>
 					{/* 搜索框结束 */}
@@ -142,6 +142,7 @@ class SearchProduct extends Component {
 					</div>
 					{/* 热门搜索结束 */}
 					{/* 历史搜索开始 */}
+	
 					<div className="history-search">
 						<h3 className="history-search-title">历史搜索</h3>
 						<div className="history-search-content">

@@ -7,10 +7,18 @@ import Cart from "./components/cart/Cart"
 import Catagory from './components/catagory/Catagory'
 import Tabbar from './components/tabbar/Tabbar'
 import My from './components/my/My'
+import Particulars from './components/gift/product/Particulars'
+import Discuss from './components/gift/product/Discuss'
+import Shopping from './components/gift/product/Shopping'
 import Register from './components/user/register/Register'
 import Login from './components/user/login/Login'
+import ProList from './components/catagory/ProList'
+import ShopInfo from './components/catagory/ShopInfo'
 // 引入搜索产品组件
 import SearchProduct from "./components/home/Searchproduct/Seartchproduct"
+import Profile from "./components/my/profile/Profile"
+import Shopcollect from "./components/my/shopCollect/myShop"
+import Coupon from "./components/my/coupon/Coupon"
 
 import Items from "./components/publicComponents/itmes/Items"
 
@@ -27,6 +35,9 @@ export default class App extends Component {
           <Route exact path="/cart" render={() => <Tabbar><Cart></Cart></Tabbar>}></Route>
           <Route exact path="/catagory" render={() => <Tabbar><Catagory></Catagory></Tabbar>}></Route>
           <Route exact path="/gift" render={() => <Tabbar><Gift></Gift></Tabbar>}></Route>
+          <Route exact path="/gift/particulars" render={() => <Particulars></Particulars>}></Route>
+          <Route exact path="/gift/discuss" render={() => <Discuss></Discuss>}></Route>
+          <Route exact path="/gift/shopping" render={() => <Shopping></Shopping>}></Route>
           <Route exact path="/my" render={() => <Tabbar><My></My></Tabbar>}></Route>
           <Route exact path='/register' render={()=><Register></Register>}></Route>
           <Route exact path='/login' render={()=><Login></Login>}></Route>
@@ -34,6 +45,11 @@ export default class App extends Component {
           <Route exact path='/itmes' render={()=><Items></Items>}></Route>
           <Route exact path='/article' render={()=><Articles></Articles>}></Route>
           <Route exact path='/artcol' render={()=><ArticleCollect></ArticleCollect>}></Route>
+          <Route exact path='/prolist' render={()=><ProList></ProList>}></Route>
+          <Route exact path='/profile' render={()=><Profile></Profile>}></Route>
+          <Route exact path='/shopcollect' render={()=><Shopcollect></Shopcollect>}></Route>
+          <Route exact path='/coupon' render={()=><Coupon></Coupon>}></Route>
+          <Route exact path='/shopInfo' render={()=><ShopInfo></ShopInfo>}></Route>
         </Router>
       </div>
     )

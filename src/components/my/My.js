@@ -25,6 +25,16 @@ class My extends Component {
     console.log(this)
     this.props.history.push('/register')
   }
+
+  setProfile = () => {
+    this.props.history.push('/profile')
+  }
+  followShop = () => {
+    this.props.history.push('/shopcollect')
+  }
+  mycoupon = () => {
+    this.props.history.push('/coupon')
+  }
   
 
   render() {
@@ -36,7 +46,7 @@ class My extends Component {
             <img></img>
           </div>
           <div className="header-profileName"> 梅梅 </div>
-          <svg className="icon" aria-hidden="true">
+          <svg className="icon" aria-hidden="true" onClick={this.setProfile}>
             <use xlinkHref="#icon-shezhi"></use>
           </svg>
         </div>
@@ -110,7 +120,7 @@ class My extends Component {
           </div>
 
           {/* 店铺关注 */}
-          <div className="follow-shop same">
+          <div className="follow-shop same" onClick={this.followShop}>
             <div className="left">
               <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#icon-dianpu"></use>
@@ -121,7 +131,7 @@ class My extends Component {
           </div>
 
           {/* 优惠券 */}
-          <div className="my-coupon same">
+          <div className="my-coupon same" onClick={this.mycoupon}>
             <div className="left">
               <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#icon-youhuijuan"></use>

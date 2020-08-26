@@ -55,10 +55,9 @@ body {
 .catagory-tab-wrapper {
   width: 100vw;
   height: 46px;
-  border: 1px solid pink;
   border-bottom: 1px solid #cccccc;
   box-sizing: border-box;
-  //   margin-bottom: 7px;
+  background: #FFFFFF;
   .catagory-tab {
     position: relative;
     top: 1px;
@@ -130,6 +129,7 @@ body {
           display: flex;
           flex-direction: column;
           margin-left: 10px;
+          width: 85px;
           .item-left-title {
             font-family: "微软雅黑 Bold", "微软雅黑";
             font-weight: 700;
@@ -162,77 +162,7 @@ body {
   }
 }
 
-// 风格
-.catagory-type-style {
-  .type-style-header {
-    height: 39px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .type-style-title {
-      margin: 0 13px;
-      font-family: "STHeitiSC-Light", "Heiti SC Light", "Heiti SC";
-      font-weight: 200;
-      font-style: normal;
-      font-size: 13px;
-      color: #888888;
-    }
-    .type-style-line {
-      width: 67px;
-      height: 1px;
-      background: #888888;
-    }
-  }
 
-  .type-style-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    .type-style-content {
-      margin: 7px 0 7px 14px;
-      .type-style-item {
-        width: 44.4vw;
-        height: 95px;
-        background: #f2f2f2;
-        border-radius: 5px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        .style-item-left {
-          display: flex;
-          flex-direction: column;
-          margin-left: 10px;
-          .item-left-title {
-            font-family: "微软雅黑 Bold", "微软雅黑";
-            font-weight: 700;
-            font-style: normal;
-            font-size: 16px;
-            line-height: 20px;
-            // margin-top: 20px;
-          }
-
-          .item-left-des {
-            font-family: "MicrosoftYaHei", "微软雅黑";
-            font-weight: 400;
-            font-style: normal;
-            font-size: 12px;
-            color: #666666;
-            line-height: 26px;
-            margin-top: 5px;
-          }
-        }
-
-        .style-item-right {
-          margin-left: 10px;
-          svg {
-            color: #717171;
-            font-size: 52px;
-          }
-        }
-      }
-    }
-  }
-}
 
 // 商品分类
 .catagory-pro {
@@ -243,7 +173,7 @@ body {
     .pro-tab-item {
       background: #efeff4;
       width: 86px;
-      height: 50px;
+      height: 50.6px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -265,9 +195,12 @@ body {
   }
 
   .pro-right {
-    width: 286px;
+    width: 100%;
     padding-left: 9px;
     padding-right: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
     .pro-right-header {
       margin-top: 12px;
       margin-bottom: 10px;
@@ -297,9 +230,8 @@ body {
       justify-content: flex-start;
 
       .pro-content-item {
-        // border: 1px solid pink;
-        width: 89px;
-        height: 90px;
+        width: 33%;
+        height: 33%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -331,9 +263,10 @@ body {
     .catagory-shop-wrap {
       .catagory-shop-item {
         display: flex;
-        width: 375px;
+        width: 100vw;
         height: 116px;
         align-items: center;
+        justify-content: center;
         // border: 1px solid black;
         .shop-item-left {
           margin-left: 10px;

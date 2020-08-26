@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "status": "去使用", 
+    "coupon_value": "20元", 
+    "coupon_title": "20元直减券", 
+    "coupon_time": "2020.08.25-2020.08.31",
+    "store": "时尚礼帽旗舰店全部商品"
+  },
+  { 
+    "id": 2,
+    "status": "已使用", 
+    "coupon_value": "5元", 
+    "coupon_title": "5元法拉利直减券", 
+    "coupon_time": "2020.07.20-2020.07.26",
+    "store": "一礼通自营店全部商品"
+  },
+  {
+    "id": 3,
+    "status": "已过期", 
+    "coupon_value": "1000元", 
+    "coupon_title": "1000元直减券", 
+    "coupon_time": "2020.08.01-2020.08.10",
+    "store": "一礼通自营店全部商品"
+  }
+]

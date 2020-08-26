@@ -1,0 +1,59 @@
+[
+  {
+    "shop_name": "一礼通自营",
+    "checkedAll": false,
+    "wdata": [
+      {
+        "product_id": 1,
+        "product_name": "双层耐热玻璃马克杯",
+        "product_price": 49.0,
+        "product_img": "/images/bz.png",
+        "product_count": 1,
+        "product_spce": "单只装-400m'l",
+        "checked": false
+      },
+      {
+        "product_id": 2,
+        "product_name": "六安瓜片",
+        "product_price": 86.0,
+        "product_img": "/images/gp.png",
+        "product_count": 1,
+        "product_spce": "90克（3克*30袋）",
+        "checked": false
+      }
+    ]
+  },
+  {
+    "shop_name": "时尚礼帽旗舰店",
+    "checkedAll": false,
+    "wdata": [
+      {
+        "product_id": 3,
+        "product_name": "优雅女士宽檐毛毡帽 ",
+        "product_price": 159.0,
+        "product_img": "/images/mz_pink.png",
+        "product_count": 1,
+        "product_spce": "香芋紫，58cm",
+        "checked": false
+      },
+      {
+        "product_id": 4,
+        "product_name": "简约短檐编织帽",
+        "product_price": 59.0,
+        "product_img": "/images/mz_write.png",
+        "product_count": 1,
+        "product_spce": "米色，60cm",
+        "checked": false
+      },
+      {
+        "product_id": 5,
+        "product_name": "短檐蝴蝶结编织帽",
+        "product_price": 69.0,
+        "product_img": "/images/mz_black.png",
+        "product_count": 1,
+        "product_spce": "云墨黑，55cm",
+        "checked": false
+      }
+    ]
+  }
+]
