@@ -5,10 +5,10 @@ import axios from "../../../utils/yfmaxios";
 
 class Register extends Component {
 
-  // // 下一步按钮
-  // nextHandler = (params) => {
-  //   this.props.history.push('/register_2')
-  // }
+  backToPre = () => {
+    this.props.history.go(-1)
+  }
+  
   // 已有账号，跳到登录
   toLogin = function(){
     // console.log(this);
@@ -93,7 +93,7 @@ class Register extends Component {
     return (
       
         <form className='register'>
-          <div className='leftNav'> {'<'} </div>
+          <div className='leftNav' onClick={this.backToPre}> {'<'} </div>
           <h2 className='title'>欢迎注册俪人小屋</h2>
           <input type='text' placeholder='请输入手机号' onChange={this.getMobile}></input>
           {/* <section className='codeTest'>

@@ -12,6 +12,9 @@ class Login extends Component {
   freeRegister = () => {
     this.props.history.push('/register')   // 跳转注册页面
   }
+  backToPre = () => {
+    this.props.history.go(-1)
+  }
 
   // 原先写法
   // 获取用户名
@@ -50,7 +53,7 @@ class Login extends Component {
   render() {
     return (
       <form className="login">
-        <div className="leftNav"> {"<"} </div>
+        <div className="leftNav" onClick={this.backToPre}> {"<"} </div>
         <h2 className="title">手机账号登录</h2>
         <input id="username" type="text" placeholder="请输入手机号" onChange={this.props.getUsername}></input>
         <input id="password" type="password" placeholder="请输入密码" onChange={this.props.getPassword}></input>

@@ -1,0 +1,52 @@
+.home-recommend-product {
+    // 商品标题
+    h2 {
+      color: #59595a;
+      font-size: 14px;
+      padding: 15px 0 15px 15px;
+    }
+    .recommend-product-list {
+     
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      // 推荐商品子选项
+      .recommend-product-item {
+        margin-bottom: 15px;
+        width: 44.4vw;
+        background-color: white;
+        .recommend-product-img {
+          img {
+            width: 100%;
+          }
+        }
+        // 商品描述
+        .product-explain-box {
+          height: 50px;
+          .recommend-product-explain {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+  
+            margin: 5px 10px 0px 10px;
+  
+            line-height: 18px;
+            // background-color: antiquewhite;
+          }
+        }
+  
+        // 推荐商品价格
+        .recommend-product-price {
+          b {
+            margin-left: 10px;
+            // background-color: aqua;
+            display: block;
+            color: #333333;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
