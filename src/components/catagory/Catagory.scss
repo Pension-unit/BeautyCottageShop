@@ -4,8 +4,18 @@ body {
 }
 
 .catagory-header {
+  position: relative;
   height: 65px;
   background-color: #ff0036;
+        .catagory-list-header-top {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 20px;
+          background-color: #37363c;
+          width: 100vw;
+          background: url(http://wlanya.oss-cn-shenzhen.aliyuncs.com/2020_08_26/b93c13b8-ff83-bf64-f993-b61e5ce5e41c.png) 100%/100% no-repeat;
+        }
   .app-catagory-search {
     position: relative;
     .icon_header-search {
@@ -123,12 +133,11 @@ body {
         background: #f2f2f2;
         border-radius: 5px;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-evenly;
         align-items: center;
         .ob-item-left {
           display: flex;
           flex-direction: column;
-          margin-left: 10px;
           width: 85px;
           .item-left-title {
             font-family: "微软雅黑 Bold", "微软雅黑";
@@ -136,7 +145,6 @@ body {
             font-style: normal;
             font-size: 16px;
             line-height: 20px;
-            // margin-top: 20px;
           }
 
           .item-left-des {
@@ -151,7 +159,6 @@ body {
         }
 
         .ob-item-right {
-          margin-left: 10px;
           svg {
             color: #717171;
             font-size: 52px;

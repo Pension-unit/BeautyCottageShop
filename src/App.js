@@ -14,6 +14,8 @@ import Register from './components/user/register/Register'
 import Login from './components/user/login/Login'
 import ProList from './components/catagory/ProList'
 import ShopInfo from './components/catagory/ShopInfo'
+import PayType from './components/pay/PayType'
+import QRCode from './components/pay/QRCode'
 // 引入搜索产品组件
 import SearchProduct from "./components/home/Searchproduct/Seartchproduct"
 import Profile from "./components/my/profile/Profile"
@@ -32,6 +34,8 @@ export default class App extends Component {
           <Route exact path="/gift/particulars" render={() => <Particulars></Particulars>}></Route>
           <Route exact path="/gift/discuss" render={() => <Discuss></Discuss>}></Route>
           <Route exact path="/gift/shopping" render={() => <Shopping></Shopping>}></Route>
+          <Route exact path="/payType" render={() => <PayType></PayType>}></Route>
+          <Route exact path="/qrCode" render={() => <QRCode></QRCode>}></Route>
           <Route exact path="/my" render={() => <Tabbar><My></My></Tabbar>}></Route>
           <Route exact path='/register' render={()=><Register></Register>}></Route>
           <Route exact path='/login' render={()=><Login></Login>}></Route>

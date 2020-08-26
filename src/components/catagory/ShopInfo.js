@@ -3,7 +3,7 @@ import "./ShopInfo.scss";
 import axios from "../../utils/myaxios";
 import { withRouter } from "react-router-dom";
 import { NavBar, Icon } from "antd-mobile";
-import { Toast, Button, WhiteSpace, WingBlank } from "antd-mobile";
+import { Toast, Button } from "antd-mobile";
 import { connect } from "react-redux";
 import {
   SortToSceneAction,

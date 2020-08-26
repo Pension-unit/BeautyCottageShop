@@ -1,0 +1,117 @@
+.pro-list-header {
+  margin-bottom: 20px;
+  .pro-list-header-top {
+    height: 20px;
+    background-color: #37363c;
+    width: 100vw;
+
+  }
+  .am-navbar {
+    height: 45px;
+    background: #37363c;
+    .am-navbar-title {
+      font-family: "MicrosoftYaHei-Bold", "Microsoft YaHei Bold",
+        "Microsoft YaHei";
+      font-weight: 700;
+      font-style: normal;
+      font-size: 16px;
+      text-decoration: none;
+      color: #ffffff;
+    }
+    .am-icon-md {
+      color: white;
+      font-weight: 800;
+    }
+  }
+}
+
+.pay-type-wrap {
+  height: 100vh;
+  background: #EFEFF4;
+  position: relative;
+  .pay-type-button {
+    .am-button {
+      height: 69px;
+      border-top: 1px solid #d9d9d9;
+      border-bottom: 1px solid #d9d9d9;
+      .pay-type-item {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .pay-type-left {
+          margin-left: 15px;
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .pay-type-icon {
+            width: 45px;
+            height: 45px;
+            img {
+              width: 45px;
+              height: 45px;
+            }
+          }
+
+          .pay-type-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            margin-left: 10px;
+            .pay-type-title {
+              text-align: start;
+              font-family: "微软雅黑 Bold", "微软雅黑";
+              font-weight: 700;
+              font-style: normal;
+              font-size: 15px;
+              line-height: 15px;
+            }
+
+            .pay-type-des {
+              font-family: "MicrosoftYaHei", "微软雅黑";
+              font-weight: 400;
+              font-style: normal;
+              font-size: 13px;
+              color: #666666;
+              line-height: 13px;
+            }
+          }
+        }
+
+        .pay-type-right {
+          margin-right: 15px;
+          display: flex;
+          align-items: center;
+          img {
+            width: 23px;
+            height: 23px;
+          }
+        }
+      }
+    }
+  }
+
+  .pay-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 18px;
+    .am-button {
+      width: 82vw;
+      background-color: #333333;
+      span {
+        font-family: "微软雅黑 Bold", "微软雅黑";
+        font-weight: 700;
+        font-style: normal;
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 50px;
+      }
+    }
+  }
+}
