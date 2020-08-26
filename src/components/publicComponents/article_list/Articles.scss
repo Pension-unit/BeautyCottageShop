@@ -1,0 +1,79 @@
+.home-column {
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 15px;
+    // background-color: yellow;
+    // background-color: white;
+    // height: 240px;
+    display: flex;
+    flex-direction: column;
+    // 栏目头
+    .column-header {
+      img {
+        width: 100%;
+      }
+    }
+    // 栏目中间
+    .column-middle {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 10px 15px;
+      .column-title {
+        font-size: 14px;
+        color: #3b3b3b;
+      }
+
+      .column-text {
+        margin-top: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // white-space: nowrap;
+        font-size: 12px;
+        line-height: 20px;
+        color: gray;
+      }
+    }
+    // 栏目下边
+    .column-bottom {
+      //   background-color: #ff0036;
+      color: #6f6f6f;
+      border-top: 1px solid #ddd;
+      padding: 0 15px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      //   background-color: green;
+      .column-bottom-left {
+        font-size: 16px;
+      }
+
+      .column-bottom-right {
+        // background-color: white;
+        .column-watch {
+          margin-right: 10px;
+          .icon {
+            margin-right: 5px;
+            font-size: 18px;
+            color: #ababab;
+          }
+
+          b {
+            color: #969696;
+          }
+        }
+
+        .column-collect {
+          .icon {
+            margin-right: 5px;
+          }
+
+          b {
+            color: #969696;
+          }
+        }
+      }
+    }
+  }
+ 

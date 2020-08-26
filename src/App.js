@@ -12,6 +12,12 @@ import Login from './components/user/login/Login'
 // 引入搜索产品组件
 import SearchProduct from "./components/home/Searchproduct/Seartchproduct"
 
+import Items from "./components/publicComponents/itmes/Items"
+
+import Articles from "./components/publicComponents/article_list/Articles"
+// 文章收藏
+import ArticleCollect from "./components/my/articleCollect/articleCollect"
+
 export default class App extends Component {
   render() {
     return (
@@ -25,6 +31,9 @@ export default class App extends Component {
           <Route exact path='/register' render={()=><Register></Register>}></Route>
           <Route exact path='/login' render={()=><Login></Login>}></Route>
           <Route exact path='/seapro' render={()=><SearchProduct></SearchProduct>}></Route>
+          <Route exact path='/itmes' render={()=><Items></Items>}></Route>
+          <Route exact path='/article' render={()=><Articles></Articles>}></Route>
+          <Route exact path='/artcol' render={()=><ArticleCollect></ArticleCollect>}></Route>
         </Router>
       </div>
     )
