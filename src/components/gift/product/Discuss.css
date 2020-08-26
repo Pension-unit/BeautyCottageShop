@@ -2,7 +2,18 @@
     width: 100%;
     background-color: #ffffff;
     position: relative;
+    padding: 22px 0;
 }
+
+.navBar{
+    color:#000000;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    position:fixed;
+    left:0;
+    top:0
+}
+
 .discuss_one {
     width: 100%;
     margin-top: 25px;
@@ -46,12 +57,13 @@
     color: #333333;
     font-size: 15px;
 }
+
 .discuss .discuss_foot{
     height: 50px;
     width: 100%;
     background-color: #EFEFF4;
     position: fixed;
-    bottom: 50px;
+    bottom: 0px;
     left: 0px;
 }
 .discuss_foot .discuss_content{
