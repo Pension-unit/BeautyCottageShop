@@ -50,7 +50,7 @@ class ShopInfo extends Component {
 
   render() {
     return (
-      <div>
+      <div className="shop-info">
         <div className="shop-info-header">
           <div className="shop-info-header-top"></div>
           <NavBar
