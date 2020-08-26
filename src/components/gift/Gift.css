@@ -1,3 +1,6 @@
+.gift{
+    padding: 0 10px;
+}
 .giftNav{
     display: flex;
     justify-content: space-evenly;
