@@ -19,6 +19,8 @@ import SearchProduct from "./components/home/Searchproduct/Seartchproduct"
 import Profile from "./components/my/profile/Profile"
 import Shopcollect from "./components/my/shopCollect/myShop"
 import Coupon from "./components/my/coupon/Coupon"
+import Feedback from "./components/my/feedback/Feedback"
+import Order from "./components/my/order/Order"
 
 import Items from "./components/publicComponents/itmes/Items"
 
@@ -53,6 +55,8 @@ export default class App extends Component {
           <Route exact path='/coupon' render={()=><Coupon></Coupon>}></Route>
           <Route exact path='/shopInfo' render={()=><ShopInfo></ShopInfo>}></Route>
           <Route exact path='/itemcol' render={()=><ItemsCollect></ItemsCollect>}></Route>
+          <Route exact path='/feedback' render={()=><Feedback></Feedback>}></Route>
+          <Route exact path='/order' render={()=><Order></Order>}></Route>
         </Router>
       </div>
     )
