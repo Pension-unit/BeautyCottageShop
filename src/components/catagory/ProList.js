@@ -108,6 +108,10 @@ class ProList extends Component {
               <div
                 className="recommend-product-item"
                 key={v.id + Math.random()}
+                onClick={(params) => {
+                  this.props.history.push("/gift/shopping")
+                }
+                }
               >
                 <div className="recommend-product-img">
                   <img src={v.recommend_url} alt=""></img>
