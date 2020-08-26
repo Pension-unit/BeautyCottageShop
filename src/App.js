@@ -25,6 +25,8 @@ import Items from "./components/publicComponents/itmes/Items"
 import Articles from "./components/publicComponents/article_list/Articles"
 // 文章收藏
 import ArticleCollect from "./components/my/articleCollect/articleCollect"
+// 商收收藏
+import ItemsCollect from "./components/my/itemCollect/itemsCollect"
 
 export default class App extends Component {
   render() {
@@ -50,6 +52,7 @@ export default class App extends Component {
           <Route exact path='/shopcollect' render={()=><Shopcollect></Shopcollect>}></Route>
           <Route exact path='/coupon' render={()=><Coupon></Coupon>}></Route>
           <Route exact path='/shopInfo' render={()=><ShopInfo></ShopInfo>}></Route>
+          <Route exact path='/itemcol' render={()=><ItemsCollect></ItemsCollect>}></Route>
         </Router>
       </div>
     )
