@@ -1,0 +1,194 @@
+.box{
+    background-color: #fff;
+}
+
+.nav {
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #343439;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 999;
+}
+
+.shop_swiper{
+    margin-top: 45px;
+}
+
+.nav .aa {
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+    color: #858585;
+    font-size: 18px;
+    font-weight: 400;
+    /* background-color: #fff; */
+}
+.nav .icon {
+    color: #ffffff;
+}
+.nav .active{
+    background-color: #fff;
+}
+
+.shopMiddle{
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    padding: 8px 0px;
+}
+.shopMiddle .shopTitle {
+    color: #333333;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.shopMiddle .shopPrice {
+    margin-top: 8px;
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: 900;
+}
+.shopSize {
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shopSize .shopSelect {
+    color: #333333;
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.shopSize .icon{
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.shoppingImg .shoppingImgf{
+    width: 100%;
+    vertical-align: top;
+}
+.shoppingImg .shoppingImgg{
+    width: 100%;
+    vertical-align: top;
+    margin-top: -68px;
+}
+.shoppingImg .shoppingImgh{
+    margin-top: -74px;
+    width: 100%;
+    vertical-align: top;
+}
+.shoppingImg .shoppingImgi{
+    margin-top: -84px;
+    width: 100%;
+    vertical-align: top;
+}
+
+.shop_discuss{
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+.shop_discuss .shop_pl{
+    color: #333333;
+    font-weight: 800;
+    font-size: 17px;
+    margin-left: 20px;
+}
+
+.shopping_one {
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 42px;
+}
+.shopping_one .shopping_boxO{
+    display: flex;
+    align-items: center;
+}
+.shopping_boxO  > img {
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.shopping_name .shopping_left{
+    margin-left: 5px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+.shopping_one .shopping_time{
+    margin-left: 40px;
+    color: #666666;
+}
+.shopping_one .shopping_text{
+    margin-left: 40px;
+    margin-top: 10px;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+}
+.shopping_one .shopDis_img{
+    width: 100%;
+    padding: 5px 36px;
+}
+.shopping_one .shopDis_img > img{
+    margin: 0 4px;
+    width: 60px;
+    height: 60px;
+}
+
+.shopping_foot {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: #ccc;
+}
+.shopping_foot .shopx {
+    width: 70px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.shopping_foot .icon{
+    width: 25px;
+    height: 25px;
+}
+.shopping_foot .shopxx {
+    width: 140px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.shopping_foot .shopping_join {
+    background-color: #999999;
+}
+.shopping_foot .shopping_buy {
+    background-color: #333333;
+}

@@ -53,14 +53,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // 轮播
-  .app-home-swiper {
-    // padding: 10px;
-    a {
-      img {
-      }
-    }
-  }
+  
   // 限时
   .home-flash-sale {
     margin-top: 10px;
@@ -228,8 +221,13 @@
   }
  
 }
+ // 商品标题
+
  // 推荐商品
-.home-recommend-product {
+ .home-recommend-product {
+  background: #efeff4;
+
+  margin-top: 20px;
   // 商品标题
   h2 {
     color: #59595a;
@@ -237,7 +235,6 @@
     padding: 15px 0 15px 15px;
   }
   .recommend-product-list {
-   
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -255,27 +252,29 @@
       // 商品描述
       .product-explain-box {
         height: 50px;
+        display: flex;
+        align-items: center;
         .recommend-product-explain {
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          overflow: hidden;
-
-          margin: 5px 10px 0px 10px;
-
-          line-height: 18px;
-          // background-color: antiquewhite;
+          font-family: "STHeitiSC-Light", "Heiti SC Light", "Heiti SC";
+          font-weight: 200;
+          font-style: normal;
+          font-size: 14px;
+          color: #555555;
+          line-height: 23px;
         }
       }
 
       // 推荐商品价格
       .recommend-product-price {
         b {
-          margin-left: 10px;
-          // background-color: aqua;
-          display: block;
-          color: #ff0000;
-          margin-bottom: 15px;
+          font-weight: normal;
+          font-family: "微软雅黑 Bold", "微软雅黑";
+          font-weight: 700;
+          font-style: normal;
+          font-size: 16px;
+          text-align: left;
+          line-height: 26px;
+          color: #ff1f1f;
         }
       }
     }
