@@ -12,6 +12,7 @@ import Discuss from './components/gift/product/Discuss'
 import Shopping from './components/gift/product/Shopping'
 import Register from './components/user/register/Register'
 import Login from './components/user/login/Login'
+import ShopInfo from './components/catagory/ShopInfo'
 // 引入搜索产品组件
 import SearchProduct from "./components/home/Searchproduct/Seartchproduct"
 import Profile from "./components/my/profile/Profile"
@@ -32,6 +33,7 @@ export default class App extends Component {
           <Route exact path='/register' render={()=><Register></Register>}></Route>
           <Route exact path='/login' render={()=><Login></Login>}></Route>
           <Route exact path='/seapro' render={()=><SearchProduct></SearchProduct>}></Route>
+          <Route exact path='/shopInfo' render={()=><ShopInfo></ShopInfo>}></Route>
           <Route exact path='/profile' render={()=><Profile></Profile>}></Route>
         </Router>
       </div>

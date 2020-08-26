@@ -21,21 +21,30 @@ class Catagory extends Component {
   };
 
   componentDidMount() {
-    axios.get("/catagory-scene.json").then((res) => {
-      this.setState({
-        catatorySceneList: res,
-      });
-    });
-    axios.get("/catagory-pro.json").then((res) => {
-      this.setState({
-        catatgoryProList: res,
-      });
-    });
-    axios.get("/catagory-shop.json").then((res) => {
-      this.setState({
-        catatgoryShopList: res,
-      });
-    });
+    axios
+      .get("/catagory-scene.json")
+      .then((res) => {
+        this.setState({
+          catatorySceneList: res,
+        });
+      })
+      .catch((err) => console.log(err));
+    axios
+      .get("/catagory-pro.json")
+      .then((res) => {
+        this.setState({
+          catatgoryProList: res,
+        });
+      })
+      .catch((err) => console.log(err));
+    axios
+      .get("/catagory-shop.json")
+      .then((res) => {
+        this.setState({
+          catatgoryShopList: res,
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -66,7 +75,6 @@ class Catagory extends Component {
         {/* tab栏 */}
         <div className="catagory-tab-wrapper">
           <div className="catagory-tab">
-            {/* <div className="catagory-tab-item active" onClick={this.props.SortToScene}> */}
             <div
               className={
                 this.props.ctgSort === "scene"
@@ -110,7 +118,6 @@ class Catagory extends Component {
               : { display: "none" }
           }
         >
-          {/* 循环开始 */}
           {/* 对象 */}
           <div className="catagory-type-ob">
             {this.state.catatorySceneList.map((v) => (
@@ -123,7 +130,12 @@ class Catagory extends Component {
                 <div className="type-ob-wrap">
                   {v.content.map((m) => (
                     <div className="type-ob-content" key={m.item_des}>
-                      <div className="type-ob-item">
+                      <div
+                        className="type-ob-item"
+                        onClick={(params) => {
+                          this.props.history.push("/shopInfo");
+                        }}
+                      >
                         <div className="ob-item-left">
                           <div className="item-left-title">{m.item_title}</div>
                           <div className="item-left-des">{m.item_des}</div>
@@ -199,6 +211,9 @@ class Catagory extends Component {
                         ? { display: "flex" }
                         : { display: "none" }
                     }
+                    onClick={(params) => {
+                      this.props.history.push("/shopInfo");
+                    }}
                   >
                     <div className="pro-right-content-top">
                       <svg className="icon" aria-hidden="true">
@@ -230,6 +245,9 @@ class Catagory extends Component {
                 className="catagory-shop-item"
                 key={index * v.shop_rec}
                 style={index % 2 === 0 ? { backgroundColor: "#EEEEEE" } : {}}
+                onClick={(params) => {
+                  this.props.history.push("/shopInfo");
+                }}
               >
                 <div className="shop-item-left">
                   <img src={v.shop_img_url}></img>
