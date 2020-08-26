@@ -29,11 +29,28 @@ class Discuss extends Component {
     render() {
         return (
             <div className="discuss">
-                <NavBar style={{color:"#000000",borderBottom: "1px solid #ccc"}}
+                <NavBar className="navBar"
                     mode="light"
                     icon={<Icon type="left" style={{color:"#000000"}} />}
                     onClick={() => this.props.history.push('/gift/particulars')}
                     >评论</NavBar>
+
+                <div className="discuss_one">
+                    <div className="discuss_boxO">
+                        <img src={LY} alt="" />
+                        <div className="discuss_name">
+                            <span className="discuss_left">柳岩</span>
+                            <div className="discuss_right">
+                                <span className="discuss_num">5</span>
+                                <svg className="icon" aria-hidden="true">
+                                    <use xlinkHref="#icon-zan1-copy"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p className="discuss_time">08月25日 00:00</p>
+                    <p className="discuss_text">这个礼品不错呀，我男朋友董哲海给我送的，我特别喜欢。下次再让他给我送其他的...</p>
+                </div>
 
                 <div className="discuss_one">
                     <div className="discuss_boxO">
