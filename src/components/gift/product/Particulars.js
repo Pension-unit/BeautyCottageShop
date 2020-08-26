@@ -28,7 +28,7 @@ class Particulars extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="particularsBox">
         <NavBar
           mode="light"
           icon={<Icon type="left" style={{ color: "#000000" }} />}
