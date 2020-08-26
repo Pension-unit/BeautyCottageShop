@@ -1,12 +1,68 @@
+.shop-header-middle {
+  display: flex;
+  height: 100%;
+  .header-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    img {
+      margin-top: 10px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-left: 10px;
+    .header-shop-title,
+    .shop-subscribe-num {
+      font-family: "微软雅黑";
+      font-weight: 410;
+      font-style: normal;
+      font-size: 14px;
+    }
+
+    // 按钮
+    .am-button {
+      height: 25px;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-family: "Arial Normal", "Arial";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px;
+        color: #333333;
+        text-align: center;
+        line-height: normal;
+      }
+    }
+  }
+}
+
 .shop-info-header {
+  background-color: #37363c;
   .shop-info-header-top {
     height: 20px;
     background-color: #37363c;
     width: 100vw;
   }
   .am-navbar {
-    height: 45px;
+    height: 115px;
     background: #37363c;
+    .am-navbar-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
     .am-navbar-title {
       font-family: "MicrosoftYaHei-Bold", "Microsoft YaHei Bold",
         "Microsoft YaHei";
@@ -23,28 +79,40 @@
   }
 }
 
-.shop-info-tab {
-  height: 45px;
+// tab栏
+.catagory-tab-wrapper {
   width: 100vw;
-  .shop-info-tab-wrapper {
-    width: 100%;
+  height: 46px;
+  border-bottom: 1px solid #cccccc;
+  box-sizing: border-box;
+  //   margin-bottom: 7px;
+  .catagory-tab {
+    position: relative;
+    top: 1px;
+    width: 255px;
     height: 100%;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    .shop-info-tab-item {
-      font-size: 14px;
-      font-family: "STHeitiSC-Light", "Heiti SC Light", "Heiti SC";
-      font-weight: 200;
-      font-style: normal;
-      font-size: 14px;
-      color: #999999;
-      line-height: 45px;
+    .catagory-tab-item {
+      flex: 1;
+      height: 100%;
+      div {
+        font-family: "MicrosoftYaHei", "微软雅黑";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        color: #666666;
+        text-align: center;
+        line-height: 45px;
+      }
     }
 
     .active {
-        font-weight: bold;
-        color: rgb(51, 51, 51);
+      border-bottom: 2px solid #666666;
+      div {
+        font-family: "微软雅黑 Bold", "微软雅黑";
+        font-weight: 700;
+      }
     }
   }
 }
@@ -70,6 +138,7 @@
       }
       // 商品描述
       .product-explain-box {
+        padding: 0 6px;
         height: 50px;
         display: flex;
         align-items: center;
@@ -85,6 +154,7 @@
 
       // 推荐商品价格
       .recommend-product-price {
+        padding: 0 6px;
         b {
           font-weight: normal;
           font-family: "微软雅黑 Bold", "微软雅黑";
@@ -96,6 +166,81 @@
           color: #333333;
         }
       }
+    }
+  }
+}
+.shop-info-wrap {
+  padding-top: 20px;
+  width: 100vw;
+  height: 486px;
+  background: #efeff4;
+
+  .shop-info-list {
+    width: 100vw;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    padding-left: 20px;
+    display: flex;
+    background: #ffffff;
+    .shop-info-left {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      .shop-info-title {
+        height: 44.5px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #d9d9d9;
+        font-family: "MicrosoftYaHei", "微软雅黑";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        color: #999999;
+        line-height: 26px;
+      }
+    }
+
+    .shop-info-right {
+      flex: 8;
+      display: flex;
+      flex-direction: column;
+      .shop-info-content {
+        padding-left: 10px;
+        height: 44.5px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #d9d9d9;
+        font-family: "MicrosoftYaHei", "微软雅黑";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    .top {
+      border-top: none !important;
+    }
+  }
+
+  .shop-info-des {
+    padding-top: 22px;
+    padding-right: 25px;
+    padding-left: 18px;
+    .shop-des-title {
+      font-family: "MicrosoftYaHei", "微软雅黑";
+      font-weight: 400;
+      font-style: normal;
+      font-size: 14px;
+      margin-bottom: 13px;
+    }
+
+    .shop-des-content {
+      font-family: "MicrosoftYaHei", "微软雅黑";
+      font-weight: 400;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 26px;
     }
   }
 }

@@ -45,13 +45,20 @@ class Catagory extends Component {
         });
       })
       .catch((err) => console.log(err));
+
+      this.props.SortToScene();
+
   }
 
   render() {
     return (
       <div>
         {/* 头部开始 */}
-        <div className="catagory-header">
+        <div className="catagory-header" style={
+                this.props.ctgSort === "scene"
+                  ? {}
+                  : {background: "#343339"}
+              }>
           <div className="app-catagory-search">
             <svg className="icon icon_header-search" aria-hidden="true">
               <use xlinkHref="#icon-sousuo"></use>
@@ -133,7 +140,7 @@ class Catagory extends Component {
                       <div
                         className="type-ob-item"
                         onClick={(params) => {
-                          this.props.history.push("/shopInfo");
+                          this.props.history.push("/prolist");
                         }}
                       >
                         <div className="ob-item-left">
@@ -212,7 +219,7 @@ class Catagory extends Component {
                         : { display: "none" }
                     }
                     onClick={(params) => {
-                      this.props.history.push("/shopInfo");
+                      this.props.history.push("/prolist");
                     }}
                   >
                     <div className="pro-right-content-top">

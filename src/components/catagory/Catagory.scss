@@ -55,10 +55,9 @@ body {
 .catagory-tab-wrapper {
   width: 100vw;
   height: 46px;
-  border: 1px solid pink;
   border-bottom: 1px solid #cccccc;
   box-sizing: border-box;
-  //   margin-bottom: 7px;
+  background: #FFFFFF;
   .catagory-tab {
     position: relative;
     top: 1px;
@@ -228,9 +227,8 @@ body {
       justify-content: flex-start;
 
       .pro-content-item {
-        // border: 1px solid pink;
-        width: 89px;
-        height: 90px;
+        width: 88px;
+        height: 88px;
         display: flex;
         flex-direction: column;
         align-items: center;
