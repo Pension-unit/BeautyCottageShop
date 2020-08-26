@@ -1,0 +1,74 @@
+[
+  {
+    "title": "对象",
+    "id": "00001",
+    "content": [
+      {
+        "item_title": "送女友",
+        "item_des": "每天爱她多一点",
+        "item_icon": "#icon-iconcopy"
+      },
+      {
+        "item_title": "送男友",
+        "item_des": "每天爱他多一点",
+        "item_icon": "#icon-lingdai"
+      },
+      {
+        "item_title": "送同事",
+        "item_des": "一起攻克项目副本",
+        "item_icon": "#icon-tongshi"
+      },
+      {
+        "item_title": "送长辈",
+        "item_des": "现在换我来宠你",
+        "item_icon": "#icon-changbei"
+      },
+      {
+        "item_title": "送基友",
+        "item_des": "发展超友谊关系",
+        "item_icon": "#icon-anmo"
+      },
+      {
+        "item_title": "送闺蜜",
+        "item_des": "姐妹永远一辈子",
+        "item_icon": "#icon-guimi"
+      }
+    ]
+  },
+  {
+    "title": "风格",
+    "id": "00002",
+    "content": [
+      {
+        "item_title": "创意生活",
+        "item_des": "脑洞多大舞台就有多大",
+        "item_icon": "#icon-sheji"
+      },
+      {
+        "item_title": "萌萌哒",
+        "item_des": "萌到让你迈不开腿",
+        "item_icon": "#icon-shoucang1"
+      },
+      {
+        "item_title": "文艺风",
+        "item_des": "给风花再添点雪月",
+        "item_icon": "#icon-icon_huaban"
+      },
+      {
+        "item_title": "科技范",
+        "item_des": "未来幻想此刻成真",
+        "item_icon": "#icon-keji"
+      },
+      {
+        "item_title": "奇葩搞怪",
+        "item_des": "地球已经不适合我",
+        "item_icon": "#icon-iconyouqipa"
+      },
+      {
+        "item_title": "设计感",
+        "item_des": "给生活多一点质感",
+        "item_icon": "#icon-sheji"
+      }
+    ]
+  }
+]

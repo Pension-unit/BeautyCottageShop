@@ -2,15 +2,15 @@ import axios from "axios";
 
 const instance = axios.create({
   baseURL: process.env.REACT_APP_URL,
+  // 请求超时
   timeout: 1000,
 });
 
 instance.interceptors.request.use(
   function (config) {
+
     let userInfo = JSON.parse(localStorage.getItem("userinfo")) || {};
     let oauth_token = userInfo.oauth_token;
-    console.log(oauth_token);
-    console.log(config.data);
     if (oauth_token && config.data) {
       // 如果是 get 请求 没有data 参数
       config.data.oauth_token = oauth_token;
