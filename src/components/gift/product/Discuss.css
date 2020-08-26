@@ -1,0 +1,79 @@
+.discuss {
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+}
+.discuss_one {
+    width: 100%;
+    margin-top: 25px;
+}
+.discuss_one .discuss_boxO{
+    display: flex;
+}
+.discuss_boxO  > img {
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.discuss_boxO .discuss_name {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.discuss_name .discuss_left{
+    margin-left: 5px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+.discuss_name .discuss_right {
+    margin-right: 20px;
+    font-size: 16px;
+}
+.discuss_name .discuss_right .discuss_num{
+    margin-right: 5px;
+}
+.discuss_one .discuss_time{
+    margin-left: 40px;
+    color: #666666;
+}
+.discuss_one .discuss_text{
+    margin-left: 40px;
+    margin-top: 10px;
+    color: #333333;
+    font-size: 15px;
+}
+.discuss .discuss_foot{
+    height: 50px;
+    width: 100%;
+    background-color: #EFEFF4;
+    position: fixed;
+    bottom: 50px;
+    left: 0px;
+}
+.discuss_foot .discuss_content{
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+}
+.discuss_content > input{
+    width: 260px;
+    height: 30px;
+    font-weight: 500;
+    font-size: 15px;
+    border-color: transparent;
+    border-radius: 5px;
+}
+.discuss_content > span{
+    margin-left: 20px;
+    width: 33px;
+    height: 21px;
+    text-align: center;
+    line-height: 21px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
