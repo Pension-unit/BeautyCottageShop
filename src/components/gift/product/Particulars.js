@@ -28,11 +28,11 @@ class Particulars extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="particularsBox">
         <NavBar
           mode="light"
           icon={<Icon type="left" style={{ color: "#000000" }} />}
-          onClick={() => this.props.history.push('/gift')}
+          onClick={() => this.props.history.go('-1')}
         >
           攻略详情
         </NavBar>
