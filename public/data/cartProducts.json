@@ -53,6 +53,15 @@
         "product_count": 1,
         "product_spce": "云墨黑，55cm",
         "checked": false
+      },
+      {
+        "product_id": 6,
+        "product_name": "短檐蝴蝶结编织帽",
+        "product_price": 69.0,
+        "product_img": "/images/mz_black.png",
+        "product_count": 1,
+        "product_spce": "云墨黑，55cm",
+        "checked": false
       }
     ]
   }

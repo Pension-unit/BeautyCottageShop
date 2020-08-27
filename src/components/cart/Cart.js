@@ -293,7 +293,14 @@ class Cart extends Component {
               }
               onClick={() => {
                 // console.log(this.props.checkedNum);
-                this.props.checkedNum === 0 ? console.log("请选择要结算的商品! ") : this.props.history.push("/payType")
+                if (localStorage.getItem("userinfo")) {
+                  console.log(localStorage.getItem("userinfo"))
+                  this.props.checkedNum === 0
+                    ? console.log("请选择要结算的商品! ")
+                    : this.props.history.push("/payType");
+                } else {
+                  this.props.history.push("/login");
+                }
               }}
             >
               <span>下单</span>

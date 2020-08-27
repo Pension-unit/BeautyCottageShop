@@ -29,7 +29,7 @@ const subAction = (shopIndex, productIndex) => {
 const getProductList = () => {
   return function (dispatch) {
     axios.get("/cartProducts.json").then((res) => {
-      // console.log(res);
+      console.log(res);
       let productList = res;
       dispatch({
         type: PROD,
