@@ -32,7 +32,7 @@ class Particulars extends Component {
         <NavBar
           mode="light"
           icon={<Icon type="left" style={{ color: "#000000" }} />}
-          onClick={() => this.props.history.go('-1')}
+          onClick={() => this.props.history.go(-1)}
         >
           攻略详情
         </NavBar>
