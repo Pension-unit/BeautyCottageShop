@@ -24,7 +24,7 @@ class Particulars extends Component {
       .catch((err) => console.log(err));
   }
   handleTo = () => {
-    this.props.history.go('/gift/shopping')
+    this.props.history.push('/gift/shopping')
   }
   render() {
     return (
