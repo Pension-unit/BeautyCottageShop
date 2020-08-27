@@ -24,11 +24,11 @@ class Particulars extends Component {
       .catch((err) => console.log(err));
   }
   handleTo = () => {
-    this.props.history.push('/gift/shopping')
+    this.props.history.go('/gift/shopping')
   }
   render() {
     return (
-      <div>
+      <div className="particularsBox">
         <NavBar
           mode="light"
           icon={<Icon type="left" style={{ color: "#000000" }} />}

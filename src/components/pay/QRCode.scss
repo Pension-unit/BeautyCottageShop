@@ -1,0 +1,35 @@
+.pro-list-header {
+  .pro-list-header-top {
+    height: 20px;
+    background-color: #37363c;
+    width: 100vw;
+  }
+  .am-navbar {
+    height: 45px;
+    background: #37363c;
+    .am-navbar-title {
+      font-family: "MicrosoftYaHei-Bold", "Microsoft YaHei Bold",
+        "Microsoft YaHei";
+      font-weight: 700;
+      font-style: normal;
+      font-size: 16px;
+      text-decoration: none;
+      color: #ffffff;
+    }
+    .am-icon-md {
+      color: white;
+      font-weight: 800;
+    }
+  }
+}
+
+.qrCode {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  .payImg{
+    width: 250px;
+    height: 250px;
+  }
+}

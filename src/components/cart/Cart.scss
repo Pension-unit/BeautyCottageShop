@@ -1,6 +1,7 @@
 .bcCart {
   width: 100vw;
   background-color: #efeff4;
+  position: relative;
   .bcHeader {
     position: fixed;
     top: 0;
@@ -32,6 +33,7 @@
     margin-top: 65px;
     margin-bottom: 50px;
     width: 100vw;
+    overflow: hidden;
     .bcContentBox {
       margin-bottom: 15px;
       .bcContentShopBox {
@@ -54,17 +56,18 @@
           }
 
           span {
+            font-size: 15px;
             color: #555555;
           }
         }
       }
       .moveStyle {
         transform: translate(-150px);
-        transition: transform 0.3s ease;
+        transition: transform 0.2s ease;
       }
       .OriginP {
         transform: translate(0);
-        transition: transform 0.3s ease;
+        transition: transform 0.2s ease;
       }
       .productsBox {
         background-color: #fff;
@@ -282,12 +285,199 @@
         text-align: center;
         line-height: 50px;
         span {
+          font-size: 14px;
         }
       }
       .active {
         background-color: #333333;
       }
     }
+  }
+  .show {
+    transition: transform 0.5s ease;
+    transform: translateY(-20px) !important;
+  }
+  .hide {
+    transition: transform 0.5s ease;
+    transform: translateY(480px) !important;
+  }
+  .hiddenBox {
+    width: 100vw;
+    padding-bottom: 0;
+    height: 450px;
+    background-color: #fff;
+    transform: translateY(460px);
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    left: 0;
+    // display: none;
+    .hiddenBoxHeader {
+      padding: 15px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      .headerImg {
+        width: 88px;
+        height: 88px;
+        margin-right: 10px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .headerPrice {
+        font-size: 14px;
+        color: #333333;
+        .money {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+
+      .closeHiddenBox {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // text-align: center;
+        // line-height: 50px;
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    .hiddenContent {
+      padding: 15px;
+      width: 100vw;
+      .color {
+        .title {
+          margin-bottom: 15px;
+          margin-top: 20px;
+          font-size: 14px;
+          color: #666666;
+        }
+
+        .options {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          .optionItem {
+            width: 80px;
+            height: 36px;
+            border: 1px solid rgba(204, 204, 204, 1);
+            border-radius: 3px;
+            text-align: center;
+            line-height: 36px;
+            margin-right: 15px;
+            font-size: 14px;
+          }
+        }
+      }
+
+      .size {
+        .title {
+          margin-bottom: 15px;
+          margin-top: 20px;
+          font-size: 14px;
+          color: #666666;
+        }
+
+        .options {
+          display: flex;
+          .optionItem {
+            width: 80px;
+            height: 36px;
+            border: 1px solid rgba(204, 204, 204, 1);
+            border-radius: 3px;
+            text-align: center;
+            line-height: 36px;
+            margin-right: 15px;
+            font-size: 14px;
+          }
+        }
+      }
+
+      .num {
+        .title {
+          margin-bottom: 15px;
+          margin-top: 20px;
+          font-size: 14px;
+          color: #666666;
+        }
+
+        .numBtn {
+          display: flex;
+          .sub {
+            width: 50px;
+            height: 36px;
+            border: 1px solid rgba(204, 204, 204, 1);
+            border-right: none;
+            border-radius: 3px 0 0 3px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 25px;
+            color: #666666;
+          }
+
+          .count {
+            width: 80px;
+            height: 36px;
+            border: 1px solid rgba(153, 153, 153, 1);
+            text-align: center;
+            line-height: 36px;
+          }
+
+          .add {
+            width: 50px;
+            height: 36px;
+            border: 1px solid rgba(153, 153, 153, 1);
+            border-left: none;
+            border-radius: 0 3px 3px 0;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            color: #666666;
+          }
+        }
+      }
+    }
+
+    .hiddenFooter {
+      margin-top: 10px;
+      .footerBtn {
+        background-color: #333333;
+        color: #fff;
+        height: 50px;
+        width: 100vw;
+        text-align: center;
+        line-height: 50px;
+      }
+    }
+  }
+
+  .shade {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+  }
+  .shadeActive {
+    display: block;
+    opacity: 0.5;
   }
 }
 .am-toast-text.am-toast-text-icon {
