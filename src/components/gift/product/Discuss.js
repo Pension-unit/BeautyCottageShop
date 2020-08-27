@@ -32,7 +32,7 @@ class Discuss extends Component {
                 <NavBar className="navBar"
                     mode="light"
                     icon={<Icon type="left" style={{color:"#000000"}} />}
-                    onClick={() => this.props.history.push('/gift/particulars')}
+                    onClick={() => this.props.history.go(-1)}
                     >评论</NavBar>
 
                 <div className="discuss_one">
@@ -66,7 +66,7 @@ class Discuss extends Component {
                         </div>
                     </div>
                     <p className="discuss_time">08月25日 00:00</p>
-                    <p className="discuss_text">这个礼品不错呀，我男朋友董哲海给我送的，我特别喜欢。下次再让他给我送其他的...</p>
+                    <p className="discuss_text">这个礼品不错呀，我老公彭艺权给我送的，我特别喜欢。下次再让他给我送其他的...</p>
                 </div>
 
                 <div className="discuss_one">
@@ -134,7 +134,7 @@ class Discuss extends Component {
                         </div>   
                     </div>
                     <p className="discuss_time">08月25日 00:02</p>
-                    <p className="discuss_text">不错,非常好看,喜欢</p>
+                    <p className="discuss_text">不错,非常好看,彭艺权推荐给我的,我特别喜欢</p>
                 </div>
 
                 <div className="discuss_one">
