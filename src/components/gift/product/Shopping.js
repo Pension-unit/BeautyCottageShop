@@ -228,6 +228,7 @@ class Shopping extends Component {
                 <div className="shopping_foot">
                     <div className="shopping_cart shopx">
                         <svg 
+                        onClick={() => this.props.history.push('/cart')}
                         className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-gouwuche"></use>
                         </svg>

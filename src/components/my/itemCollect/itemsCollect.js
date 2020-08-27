@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
-
 import {withRouter} from "react-router-dom"
-
 import "./itemsCollect.scss"
-
 import Items from "../../publicComponents/itmes/Items"
 
  class itemsCollect extends Component {
    clickhandle= (params) => {
      this.props.history.go(-1)
    }
-   
+  
   render() {
     return (
       <div>
