@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ReactDOM from "react-dom"
 // ant-design-mobile 轮播图组件
 import { Carousel } from "antd-mobile";
+
+import { Toast} from "antd-mobile";
 // 引入样式
 import "./Home.scss"
 // 引入axios
@@ -9,7 +11,7 @@ import axios from "../../utils/myaxios"
 // 引入限购一套图片
 import OnyOneImgUrl from "../../assets/images/u59.jpg"
 
-import {withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom"
 
 import { PullToRefresh } from 'antd-mobile';
 
@@ -20,11 +22,47 @@ function genData() {
   }
   return dataArr;
 }
- class home extends Component {
-  searchProduct= (params) => {  
+class home extends Component {
+  // 头部搜索跳转
+  searchProduct = (params) => {
     this.props.history.push("/seapro")
   }
+  // 栏目图片跳转
+  coulmnSkip =(params) => {
+    this.props.history.push("/gift/particulars")
+  }
+//推荐商品跳转
+recommendSkip = (params) => {
+  this.props.history.push("/gift/shopping")
+}
+
   
+  // 栏目收藏
+  collect = (index) => {
+    Toast.success("收藏成功", 0.8);
+    this.setState({
+      isCollect: (() => {
+        var arr = this.state.isCollect
+        arr.splice(index, 1, 1)
+        return arr
+      })()
+    })
+    // console.log(index, this.state.isCollect)
+  }
+  // 栏目取消收藏
+  cancelCollect = (index) => {
+    Toast.success("取消收藏成功", 0.8);
+    this.setState({
+      isCollect: (() => {
+        var arr = this.state.isCollect
+        arr.splice(index, 1, 0)
+        return arr
+      })()
+    })
+    // console.log(index, this.state.isCollect)
+
+  }
+
   state = {
     // 返回的轮播图数据
     swiper_list: [],
@@ -51,11 +89,14 @@ function genData() {
     height: 50,
     data: [],
     // 刷新接收的数据
-    newRecommend_list:[]
+    newRecommend_list: [],
+    // 判断有没有收藏
+    isCollect: []
 
   }
   // 获取数据
   componentDidMount() {
+
     // 倒计时
     var that = this
     this.setState({
@@ -71,7 +112,6 @@ function genData() {
         that.setState({
           hourText: lefth
         })
-        console.log(that.state.hourText)
         that.setState({
           minuteText: leftm
         })
@@ -85,7 +125,27 @@ function genData() {
     // 请求限时抢购数据
     axios.get('/flash-sale-product-list.json').then((res) => { this.setState({ flash_sale_product_list: res }) }).catch(err => console.log(err))
     // 请求栏目数据
-    axios.get('/column-list.json').then((res) => { this.setState({ column_list: res }) }).catch(err => console.log(err))
+    axios.get('/column-list.json')
+      .then((res) => { this.setState({ column_list: res }) })
+      .then(
+        (params) => {
+          this.state.column_list.map((v, index) => {
+            this.setState({
+              isCollect: ((params) => {
+                var arr = this.state.isCollect
+                arr.push(0)
+                return arr
+              })()
+            })
+          }
+          )
+        }
+      )
+      .then((params) => {
+        console.log(this.state.isCollect)
+      }
+      )
+      .catch(err => console.log(err))
     // 请求推荐商品数据
     axios.get('/recommend-list.json').then((res) => { console.log(res); this.setState({ recommend_list: res }) }).catch(err => console.log(err))
 
@@ -182,10 +242,10 @@ function genData() {
           {/* 限购一套结束 */}
           {/* 栏目开始 */}
           <div className="home-warp">
-            {this.state.column_list.map(v =>
-              <div className="home-column" key={v.column_url}>
+            {this.state.column_list.map((v, index) =>
+              <div className="home-column" key={v.column_collect_num} >
                 <div className="column-header">
-                  <img src={v.column_url}></img>
+                  <img src={v.column_url} onClick={this.coulmnSkip}></img>
                 </div>
                 <div className="column-middle">
                   <span className="column-title">{v.column_text_title}</span>
@@ -200,11 +260,17 @@ function genData() {
                       </svg>
                       <b>{v.column_watch_num}</b>
                     </i>
-                    <i className="column-collect">
-                      <svg className="icon" aria-hidden="true">
-                        <use xlinkHref="#icon-shoucang1"></use>
+                    <i className="column-collect" >
+                      <svg className={this.state.isCollect[index] == 1 ? "icon iconSelected" : "icon"} aria-hidden="true" onClick={!this.state.isCollect[index] ? (params) => {
+                        this.collect(index)
+                      }
+                        : (params) => {
+                          this.cancelCollect(index)
+                        }
+                      }>
+                        <use xlinkHref={this.state.isCollect[index] == 1 ? "#icon-shoucang-copy1" : "#icon-shoucang1"}></use>
                       </svg>
-                      <b>{v.column_collect_num}</b>
+                      <b>{this.state.isCollect[index] ? v.column_collect_num + 1 : v.column_collect_num}</b>
                     </i>
                   </span>
                 </div>
@@ -220,9 +286,9 @@ function genData() {
           <div className="recommend-product-list">
             {/* 子项目开始 */}
             {this.state.recommend_list.map(v =>
-              <div className="recommend-product-item" key={v.id+Math.random() * 10000000000000000000000000}>
+              <div className="recommend-product-item" key={v.id + Math.random() * 10000000000000000000000000}>
                 <div className="recommend-product-img">
-                  <img src={v.recommend_url} alt=""></img>
+                  <img src={v.recommend_url} alt="" onClick={this.recommendSkip}></img>
                 </div>
                 <div className="product-explain-box">
                   <span className="recommend-product-explain">{v.recommend_text}</span>
@@ -250,14 +316,14 @@ function genData() {
           refreshing={this.state.refreshing}
           onRefresh={() => {
             axios.get('/recommend-list.json')
-            .then((res) => {  this.setState({ newRecommend_list: res }) })
+              .then((res) => { this.setState({ newRecommend_list: res }) })
               .catch(err => console.log(err))
             this.setState({ refreshing: true });
-            
+
             setTimeout(() => {
               this.setState({ refreshing: false });
-             this.setState({recommend_list: this.state.recommend_list.concat(this.state.newRecommend_list)})
-             console.log(this.state.recommend_list)
+              this.setState({ recommend_list: this.state.recommend_list.concat(this.state.newRecommend_list) })
+              //  console.log(this.state.recommend_list)
             }, 1000);
           }}
         >

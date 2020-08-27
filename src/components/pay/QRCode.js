@@ -3,6 +3,7 @@ import "./QRCode.scss";
 import axios from "../../utils/myaxios";
 import { withRouter } from "react-router-dom";
 import { NavBar, Icon } from "antd-mobile";
+import payImg from"../../assets/images/pay.png"
 
 class ProList extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class ProList extends Component {
   }
 
   state = {
+    payImg:payImg,
     recommend_list: [],
     shopInfoTab: "zh",
   };
@@ -38,7 +40,7 @@ class ProList extends Component {
           </NavBar>
         </div>
         <div className="qrCode">
-          <img src="http://wlanya.oss-cn-shenzhen.aliyuncs.com/2020_08_26/02603236-68e9-f25d-8383-0a7ae1f0c638.png"></img>
+          <img src={this.state.payImg} className="payImg"></img>
         </div>
       </div>
     );

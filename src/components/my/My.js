@@ -56,7 +56,7 @@ class My extends Component {
         {/* 头部 */}
         <div className="my-header">
           <div className="header-profileImg">
-            <img></img>
+            {/* <img src='../../assets/profileImg.jpg'></img> */}
           </div>
           <div className="header-profileName"> 梅梅 </div>
           <svg className="icon" aria-hidden="true" onClick={this.setProfile}>
