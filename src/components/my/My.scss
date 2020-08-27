@@ -10,13 +10,25 @@
   justify-content: space-around;
   align-items: center;
   position: relative;
+
+  .am-button {
+    border: 1px solid white;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
   .header-profileImg{
     width: 70px;
     height: 70px;
     background-color: #dadada;
     border-radius: 50%;
-    // background: url(../images/profileimg.jpg) 0 0/100% 100% no-repeat;
     background: url(../../assets/images/profile11.jpg) 0 0/100% 100% no-repeat;
+    
+
+
   }
   .header-profileName{
     color: white;

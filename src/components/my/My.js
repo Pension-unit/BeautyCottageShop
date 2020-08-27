@@ -1,65 +1,90 @@
 import React, { Component } from "react";
 import axios from "../../utils/myaxios";
 import "./My.scss";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from "react-router-dom";
+import { Button } from "antd-mobile";
 
 class My extends Component {
   componentDidMount() {
-    axios.get("/my.json")
+    axios
+      .get("/my.json")
       .then((res) => {
         // console.log(res);
         this.setState({
-            itemImg:res  
-        })
+          itemImg: res,
+        });
       })
       .catch((err) => {
         console.log(err);
       });
   }
   state = {
-      itemImg: [],
+    itemImg: [],
   };
 
   //跳转订单页面
-  checkAllOrder  = () => {
-    console.log(this)
-    this.props.history.push('/order')
-  }
+  checkAllOrder = () => {
+    console.log(this);
+    this.props.history.push("/order");
+  };
   //跳转个人信息设置
   setProfile = () => {
-    this.props.history.push('/profile')
-  }
+    this.props.history.push("/profile");
+  };
   //跳转店铺收藏页面
   followShop = () => {
-    this.props.history.push('/shopcollect')
-  }
+    this.props.history.push("/shopcollect");
+  };
   //跳转优惠券页面
   mycoupon = () => {
-    this.props.history.push('/coupon')
-  }
+    this.props.history.push("/coupon");
+  };
   //跳转意见反馈页面
   toFeedback = () => {
-    this.props.history.push('/feedback')
-  }
+    this.props.history.push("/feedback");
+  };
   //跳转文章收藏页面
   toArticle = () => {
-    this.props.history.push('/artcol')
-  }
+    this.props.history.push("/artcol");
+  };
   //跳转商品收藏页面
   itemCollect = () => {
-    this.props.history.push('/itemcol')
-  }
-  
+    this.props.history.push("/itemcol");
+  };
+
   render() {
     return (
-      <div className='myComp'>
+      <div className="myComp">
         {/* 头部 */}
         <div className="my-header">
-          <div className="header-profileImg">
+          
+          <div className="header-profileImg" style={
+        localStorage.userinfo
+          ? { display: "block" }
+          : { display: "none" }
+      }>
             {/* <img src='../../assets/profileImg.jpg'></img> */}
           </div>
-          <div className="header-profileName"> 梅梅 </div>
-          <svg className="icon" aria-hidden="true" onClick={this.setProfile}>
+          <div className="header-profileName" style={
+        localStorage.userinfo
+          ? { display: "block" }
+          : { display: "none" }
+      }> 梅梅 </div>
+          <Button onClick={(params) => {
+            this.props.history.push("login")
+          }
+          } style={
+        !localStorage.userinfo
+          ? { display: "block" }
+          : { display: "none" }
+      }>
+            登录
+          </Button>
+          <svg className="icon" aria-hidden="true" onClick={this.setProfile} style={
+        localStorage.userinfo
+          ? { display: "block" }
+          : { display: "none" }
+      }>
             <use xlinkHref="#icon-shezhi"></use>
           </svg>
         </div>
@@ -114,10 +139,10 @@ class My extends Component {
             <span> {">"} </span>
           </div>
           <div className="item-list">
-              {this.state.itemImg.map(v=>
-                <img src={v.itemImg_url} alt="" key={v.itemImg_url}/>
-              )}
-           </div>                              
+            {this.state.itemImg.map((v) => (
+              <img src={v.itemImg_url} alt="" key={v.itemImg_url} />
+            ))}
+          </div>
         </div>
 
         <div className="pay-attention">
@@ -182,4 +207,4 @@ class My extends Component {
   }
 }
 
-export default withRouter(My)
+export default withRouter(My);

@@ -22,12 +22,16 @@ const login = (name, mm) => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res);
-        localStorage.setItem("userinfo", JSON.stringify(res.wdata));
-        window.location.href="index.html"; //跳转首页
-        // this.props.history.push("/"); //此方法这里用不了
+        if (res.ret == "0") {
+          localStorage.setItem("userinfo", JSON.stringify(res.wdata));
+          // window.location.href="index.html"; //跳转首页
+          window.history.go(-1)
+          // this.props.history.push("/"); //此方法这里用不了
+        } else {
+          alert("账号或密码有误")
+        }
       })
-      .catch((err) => console.log(err));
+      .catch(err =>  {});
   };
 };
 

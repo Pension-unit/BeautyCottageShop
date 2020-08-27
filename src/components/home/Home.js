@@ -163,6 +163,7 @@ recommendSkip = (params) => {
       <div>
         {/* 头部开始 */}
         <div className="home-header">
+          <div className="home-header-top"></div>
           <div className="app-home-search">
             <svg className="icon icon_header-search" aria-hidden="true">
               <use xlinkHref="#icon-sousuo"></use>

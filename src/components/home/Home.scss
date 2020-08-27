@@ -2,6 +2,15 @@
 .home-header {
   height: 65px;
   background-color: #ff0036;
+  .home-header-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px;
+    background-color: #37363c;
+    width: 100vw;
+    background: url(http://wlanya.oss-cn-shenzhen.aliyuncs.com/2020_08_26/b93c13b8-ff83-bf64-f993-b61e5ce5e41c.png) 100%/100% no-repeat;
+  }
   .app-home-search {
     position: relative;
     .icon_header-search {

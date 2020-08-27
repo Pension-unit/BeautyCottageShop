@@ -241,7 +241,12 @@ class Shopping extends Component {
                     <div className="shopping_join shopxx">加入购物车</div>
                     <div className="shopping_buy shopxx"
                     onClick={(params) => {
-                        this.props.history.push("/payType")
+                        if (localStorage.userinfo) {
+                            console.log("local", localStorage.userinfo)
+                            this.props.history.push("/payType")
+                        } else {
+                            this.props.history.push("/login")
+                        }
                     }
                     }
                     >立即购买</div>

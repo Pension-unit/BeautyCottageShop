@@ -41,7 +41,6 @@ class Gift extends Component {
         return (
             // <Spin indicator={antIcon} />,
             <div className="gift">
-
                 <div className="giftNav">
                     {this.state.list.map(item => {
                         return <div className="navList" key={item.id}>{item.name}

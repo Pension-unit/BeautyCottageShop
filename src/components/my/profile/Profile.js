@@ -29,7 +29,7 @@ class Profile extends Component {
     axios.get('/logout?oauth_token='+oauth_token).then(res=>{
       console.log(res);
       if(res.ret===0){
-        this.props.history.push('/login')
+        this.props.history.push('/my')
         window.localStorage.clear();
       }
     }).catch(err=>console.log(err))
