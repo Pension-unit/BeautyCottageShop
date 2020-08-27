@@ -29,7 +29,6 @@ class Cart extends Component {
     if (this.props.userProductList.length === 0) {
       this.props.productList();
     }
-
   }
   handleTouchMove = (shopIndex, productIndex, e) => {
     console.log(this.currentPre);
@@ -133,7 +132,13 @@ class Cart extends Component {
                     >
                       <img src={v.checkedAll ? selected : unSelected} alt="" />
                     </div>
-                    <span>{v.shop_name + " >"}</span>
+                    <span
+                      onClick={() => {
+                        this.props.history.push("/shopInfo");
+                      }}
+                    >
+                      {v.shop_name + " >"}
+                    </span>
                   </div>
                 </div>
                 {v.wdata.map((v, productIndex) => {
@@ -164,7 +169,12 @@ class Cart extends Component {
                         >
                           <img src={v.checked ? selected : unSelected} alt="" />
                         </div>
-                        <div className="productImg">
+                        <div
+                          className="productImg"
+                          onClick={() => {
+                            this.props.history.push("/gift/shopping");
+                          }}
+                        >
                           <img src={v.product_img} alt="" />
                         </div>
                         <div className="productInfo">
@@ -281,6 +291,17 @@ class Cart extends Component {
                   ? "placeAnOrder"
                   : "placeAnOrder active"
               }
+              onClick={() => {
+                // console.log(this.props.checkedNum);
+                if (localStorage.getItem("userinfo")) {
+                  console.log(localStorage.getItem("userinfo"))
+                  this.props.checkedNum === 0
+                    ? console.log("请选择要结算的商品! ")
+                    : this.props.history.push("/payType");
+                } else {
+                  this.props.history.push("/login");
+                }
+              }}
             >
               <span>下单</span>
             </div>
